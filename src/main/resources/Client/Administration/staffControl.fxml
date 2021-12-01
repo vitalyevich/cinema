@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Administration.StaffController">
+   <children>
+      <TabPane layoutY="95.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="805.0" prefWidth="1300.0" styleClass="table-cell" stylesheets="@../../css/style.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+         <tabs>
+            <Tab text="Список сотрудников">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="1000.0">
+                     <children>
+                        <TitledPane animated="false" collapsible="false" contentDisplay="CENTER" focusTraversable="false" layoutX="37.0" layoutY="15.0" prefHeight="121.0" prefWidth="269.0" style="-fx-background-color: white;" text="Фильтрация" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="15.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="169.0" prefWidth="227.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <JFXTextField fx:id="textFind" focusColor="BLACK" layoutX="9.0" layoutY="25.0" prefHeight="37.0" prefWidth="198.0" promptText="Поиск..." unFocusColor="BLACK" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                                       <font>
+                                          <Font name="Cambria" size="20.0" />
+                                       </font>
+                                    </JFXTextField>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <font>
+                              <Font name="Cambria Bold" size="20.0" />
+                           </font>
+                        </TitledPane>
+                        <TableView fx:id="tableStaff" focusTraversable="false" layoutX="310.0" layoutY="260.0" prefHeight="640.0" prefWidth="875.0" style="-fx-border-color: d3d3d3; -fx-background-color: white;" styleClass="table-cell" stylesheets="@../../css/style.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="310.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                          <columns>
+                            <TableColumn fx:id="numColumn" maxWidth="1000.0" prefWidth="75.0" text="№" />
+                            <TableColumn fx:id="lastNameColumn" maxWidth="4000.0" prefWidth="75.0" text="Фамилия" />
+                              <TableColumn fx:id="firstNameColumn" maxWidth="3000.0" prefWidth="75.0" text="Имя" />
+                              <TableColumn fx:id="middleNameColumn" prefWidth="75.0" text="Отчество" />
+                              <TableColumn fx:id="phoneColumn" prefWidth="75.0" text="Номер телефона" />
+                              <TableColumn fx:id="depColumn" prefWidth="75.0" text="Должность" />
+                              <TableColumn fx:id="salColumn" maxWidth="3500.0" prefWidth="75.0" text="Зарплата" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <HBox alignment="TOP_CENTER" layoutX="20.0" layoutY="175.0" prefHeight="65.0" prefWidth="261.0" spacing="15.0">
+                           <children>
+                              <JFXButton fx:id="buttonUpdate" onMouseClicked="#onClicked_Update" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Обновить" textFill="WHITE">
+                                 <font>
+                                    <Font name="Cambria Bold" size="19.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Добавление">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutY="14.0" prefHeight="372.0" prefWidth="685.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <children>
+                              <Label layoutX="114.0" layoutY="32.0" text="Добавление сотрудника:" AnchorPane.leftAnchor="114.0" AnchorPane.topAnchor="32.0">
+                                 <font>
+                                    <Font name="Cambria Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <VBox layoutX="114.0" layoutY="102.0" prefHeight="200.0" prefWidth="230.0" spacing="50.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="114.0" AnchorPane.topAnchor="102.0">
+                                 <children>
+                                    <JFXTextField fx:id="addLastName" focusColor="BLACK" labelFloat="true" promptText="Фамилия" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="addFirstName" focusColor="BLACK" labelFloat="true" promptText="Имя" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="addMiddleName" focusColor="BLACK" labelFloat="true" promptText="Отчество" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="addPass" focusColor="BLACK" labelFloat="true" promptText="Пароль" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_RIGHT" layoutX="409.0" layoutY="102.0" prefHeight="200.0" prefWidth="230.0" spacing="50.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="409.0" AnchorPane.topAnchor="102.0">
+                                 <children>
+                                    <JFXComboBox fx:id="addComboGender" focusColor="BLACK" labelFloat="true" prefHeight="43.0" prefWidth="235.0" promptText="Пол" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                    <JFXTextField fx:id="addPhone" focusColor="BLACK" labelFloat="true" promptText="Телефон" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXComboBox fx:id="addComboDep" focusColor="BLACK" labelFloat="true" prefHeight="43.0" prefWidth="252.0" promptText="Должность" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                    <JFXButton fx:id="addStaff" onMouseClicked="#onClicked_Add" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Добавить" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="19.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Редактирование">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="23.0" layoutY="53.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <children>
+                              <Label layoutX="108.0" layoutY="37.0" text="Редактирование данных сотрудника:" AnchorPane.leftAnchor="108.0" AnchorPane.topAnchor="37.0">
+                                 <font>
+                                    <Font name="Cambria Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <VBox layoutX="108.0" layoutY="101.0" prefHeight="200.0" prefWidth="205.0" spacing="50.0" AnchorPane.leftAnchor="108.0" AnchorPane.topAnchor="101.0">
+                                 <children>
+                                    <JFXComboBox fx:id="editComboNum" focusColor="BLACK" labelFloat="true" onAction="#onAction_ComboNum" prefHeight="31.0" prefWidth="204.0" promptText="№" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                    <JFXTextField fx:id="editLastName" focusColor="BLACK" labelFloat="true" promptText="Фамилия" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="editFirstName" focusColor="BLACK" labelFloat="true" promptText="Имя" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="editMiddleName" focusColor="BLACK" labelFloat="true" promptText="Отчество" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_RIGHT" layoutX="388.0" layoutY="101.0" prefHeight="194.0" prefWidth="205.0" spacing="50.0" AnchorPane.leftAnchor="388.0" AnchorPane.topAnchor="101.0">
+                                 <children>
+                                    <JFXTextField fx:id="editPass" focusColor="BLACK" labelFloat="true" promptText="Пароль" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXComboBox fx:id="editComboGender" focusColor="BLACK" labelFloat="true" prefHeight="31.0" prefWidth="204.0" promptText="Пол" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                    <JFXTextField fx:id="editPhone" focusColor="BLACK" labelFloat="true" promptText="Телефон" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXComboBox fx:id="editComboDep" focusColor="BLACK" labelFloat="true" prefHeight="31.0" prefWidth="204.0" promptText="Должность" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                    <JFXButton fx:id="editSave" onMouseClicked="#onClicked_Save" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Сохранить" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="19.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Удаление">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="402.0" layoutY="144.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <children>
+                              <Label layoutX="114.0" layoutY="28.0" text="Удаление сотрудника:" AnchorPane.leftAnchor="114.0" AnchorPane.topAnchor="28.0">
+                                 <font>
+                                    <Font name="Cambria Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <VBox alignment="TOP_RIGHT" layoutX="114.0" layoutY="84.0" prefHeight="200.0" prefWidth="205.0" spacing="50.0" AnchorPane.leftAnchor="114.0" AnchorPane.topAnchor="84.0">
+                                 <children>
+                                    <JFXComboBox fx:id="delComboNum" focusColor="BLACK" labelFloat="true" prefHeight="31.0" prefWidth="204.0" promptText="№" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                    <JFXButton fx:id="buttonDelId" onMouseClicked="#onClicked_DelId" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Удалить" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="19.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXTextField fx:id="delLastName" focusColor="BLACK" labelFloat="true" promptText="Фамилия" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="delFirstName" focusColor="BLACK" labelFloat="true" promptText="Имя" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="delMiddleName" focusColor="BLACK" labelFloat="true" promptText="Отчество" unFocusColor="BLACK">
+                                       <font>
+                                          <Font name="Cambria" size="22.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXButton fx:id="buttonDel" onMouseClicked="#onClicked_Del" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Удалить" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="19.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                              <Label layoutX="431.0" layoutY="28.0" text="Удаление сотрудников:">
+                                 <font>
+                                    <Font name="Cambria Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="458.0" layoutY="275.0" text="Очистка таблицы сотрудников:">
+                                 <font>
+                                    <Font name="Cambria Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton fx:id="buttonClear" layoutX="431.0" layoutY="336.0" onMouseClicked="#onClicked_Clear" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Очистить таблицу" textFill="WHITE">
+                                 <font>
+                                    <Font name="Cambria Bold" size="19.0" />
+                                 </font>
+                              </JFXButton>
+                              <FontAwesomeIcon fill="RED" glyphName="WARNING" layoutX="431.0" layoutY="296.0" size="20" />
+                              <VBox layoutX="431.0" layoutY="84.0" prefHeight="200.0" prefWidth="205.0" spacing="50.0">
+                                 <children>
+                                    <JFXComboBox fx:id="delComboDep" focusColor="BLACK" labelFloat="true" prefHeight="31.0" prefWidth="204.0" promptText="Должность" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                    <JFXButton fx:id="buttonAllDel" onMouseClicked="#onClicked_AllDel" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Удалить всех" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="19.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Отделы">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane animated="false" collapsible="false" contentDisplay="CENTER" focusTraversable="false" layoutX="28.0" layoutY="20.0" prefHeight="210.0" prefWidth="408.0" style="-fx-background-color: white;" text="Изменить зарплату" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <font>
+                              <Font name="Cambria Bold" size="20.0" />
+                           </font>
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="169.0" prefWidth="323.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <VBox layoutX="29.0" layoutY="24.0" prefHeight="164.0" prefWidth="205.0" spacing="40.0">
+                                       <children>
+                                          <JFXComboBox fx:id="comboDep" focusColor="BLACK" labelFloat="true" prefHeight="31.0" prefWidth="204.0" promptText="Должность" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                          <JFXTextField fx:id="textSalary" focusColor="BLACK" labelFloat="true" promptText="Зарплата" unFocusColor="BLACK">
+                                             <font>
+                                                <Font name="Cambria" size="22.0" />
+                                             </font>
+                                          </JFXTextField>
+                                       </children>
+                                    </VBox>
+                                    <JFXButton fx:id="editSalary" layoutX="275.0" layoutY="31.0" onMouseClicked="#onClicked_EditSal" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Изменить" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="19.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" contentDisplay="CENTER" focusTraversable="false" layoutX="21.0" layoutY="241.0" prefHeight="211.0" prefWidth="406.0" style="-fx-background-color: white;" text="Изменить должность:" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria Bold" size="20.0" />
+                           </font>
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="169.0" prefWidth="227.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <JFXButton fx:id="editDepartment" layoutX="273.0" layoutY="41.0" onMouseClicked="#onClicked_editDep" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Изменить" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="19.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <VBox layoutX="30.0" layoutY="33.0" prefHeight="126.0" prefWidth="205.0" spacing="40.0">
+                                       <children>
+                                          <JFXComboBox fx:id="comboDepartment" focusColor="BLACK" labelFloat="true" prefHeight="31.0" prefWidth="204.0" promptText="Должность" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                          <JFXTextField fx:id="textDep" focusColor="BLACK" labelFloat="true" promptText="Должность" unFocusColor="BLACK">
+                                             <font>
+                                                <Font name="Cambria" size="22.0" />
+                                             </font>
+                                          </JFXTextField>
+                                       </children>
+                                    </VBox>
+                                    <JFXButton fx:id="delDep" layoutX="273.0" layoutY="108.0" onMouseClicked="#onClicked_delDep" prefHeight="37.0" prefWidth="117.0" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Удалить" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="19.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TableView fx:id="tableDepartment" layoutX="455.0" layoutY="429.0" prefHeight="712.0" prefWidth="815.0" style="-fx-background-color: white; -fx-border-color: d3d3d3;" styleClass="table-cell" stylesheets="@../../css/style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="455.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                          <columns>
+                            <TableColumn fx:id="numberColumn" maxWidth="1500.0" prefWidth="75.0" text="№" />
+                            <TableColumn fx:id="departmentColumn" prefWidth="75.0" text="Должность" />
+                              <TableColumn fx:id="salaryColumn" prefWidth="75.0" text="Зарплата" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <TitledPane animated="false" collapsible="false" contentDisplay="CENTER" focusTraversable="false" layoutX="20.0" layoutY="460.0" prefHeight="202.0" prefWidth="408.0" style="-fx-background-color: white;" text="Управление должностями" textAlignment="CENTER" AnchorPane.leftAnchor="20.0">
+                           <font>
+                              <Font name="Cambria Bold" size="20.0" />
+                           </font>
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="73.0" prefWidth="404.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <JFXButton fx:id="addDep" layoutX="244.0" layoutY="25.0" onMouseClicked="#onClicked_addDep" prefHeight="37.0" prefWidth="147.0" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Добавить" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="19.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <VBox layoutX="14.0" layoutY="25.0" prefHeight="159.0" prefWidth="205.0" spacing="40.0">
+                                       <children>
+                                          <JFXTextField fx:id="textDepart" focusColor="BLACK" labelFloat="true" promptText="Должность" unFocusColor="BLACK">
+                                             <font>
+                                                <Font name="Cambria" size="22.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <JFXTextField fx:id="textSal" focusColor="BLACK" labelFloat="true" prefWidth="205.0" promptText="Зарплата" unFocusColor="BLACK">
+                                             <font>
+                                                <Font name="Cambria" size="22.0" />
+                                             </font>
+                                          </JFXTextField>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <JFXButton fx:id="clearDep" layoutX="21.0" layoutY="681.0" onMouseClicked="#onClicked_clearDep" prefWidth="200.0" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 10;" text="Очистить таблицу" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria Bold" size="19.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <AnchorPane fx:id="anchor" layoutX="37.0" layoutY="-71.0" prefHeight="96.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpaBuddyIdeaProjectConfig" ddlActionDbType="mssql">
+    <option name="defaultUnitInitialized" value="true" />
+    <option name="reverseEngineeringLastDbConnectionId" value="db23b5e9-1eb8-4741-ba7e-28967d115b75" />
+    <option name="reLastEntityCreationPackage" value="src/main/java/Server/Model" />
+  </component>
+</project>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="938.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Authorization.AuthorizationController">
+   <children>
+      <AnchorPane layoutX="23.0" layoutY="34.0" prefHeight="533.0" prefWidth="744.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="34.0">
+         <children>
+            <AnchorPane layoutX="203.0" layoutY="51.0" maxWidth="889.0" prefHeight="531.0" prefWidth="710.0" style="-fx-background-color: white; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="51.0">
+               <children>
+                  <Label layoutX="367.0" layoutY="51.0" text="Авторизация">
+                     <font>
+                        <Font name="Cambria" size="30.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="buttonEnter" buttonType="RAISED" layoutX="402.0" layoutY="431.0" onAction="#buttonAction_Enter" onKeyPressed="#buttonPressed_Enter" prefHeight="50.0" prefWidth="110.0" ripplerFill="#ffd1b4" style="-fx-background-color: linear-gradient(to right top, #f34336, #f8704d, #fb936a, #feb38c, #ffd1b4);; -fx-background-radius: 1em;" text="Войти" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria Bold" size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="textLogin" focusColor="#ffd1b4" focusTraversable="false" labelFloat="true" layoutX="354.0" layoutY="207.0" onKeyPressed="#textPressed_Login" prefHeight="30.0" prefWidth="205.0" promptText="Логин" unFocusColor="BLACK">
+                     <font>
+                        <Font name="Cambria" size="22.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="textPassword" focusColor="#ffd1b4" focusTraversable="false" labelFloat="true" layoutX="354.0" layoutY="304.0" onKeyPressed="#textPressed_Pass" prefHeight="31.0" prefWidth="205.0" promptText="Пароль" unFocusColor="BLACK">
+                     <font>
+                        <Font name="Cambria" size="22.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <Label fx:id="labelError" layoutX="305.0" layoutY="382.0" textFill="#d74b4b">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelConnect" layoutX="388.0" layoutY="147.0" text="сервер отключен!" textAlignment="CENTER" textFill="#d74b4b" underline="true">
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIcon fx:id="iconConnect" fill="RED" glyphName="EXCLAMATION_CIRCLE" layoutX="354.0" layoutY="167.0" size="30" text="" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="18.0" layoutY="29.0" prefHeight="593.0" prefWidth="444.0" style="-fx-background-color: linear-gradient(to right top, #f34336, #f8704d, #fb936a, #feb38c, #ffd1b4);; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" layoutX="50.0" layoutY="78.0" prefHeight="543.0" prefWidth="312.0" spacing="6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="Кинотеатр" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="35.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="70.0" prefWidth="287.0" text="&quot;Беларусь&quot;" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria Bold" size="45.0" />
+                           </font>
+                        </Label>
+                        <Label text="г.Столбцы" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Label layoutX="14.0" layoutY="566.0" text="\@vitalyevich" textFill="WHITE" AnchorPane.bottomAnchor="14.0">
+                     <font>
+                        <Font name="Cambria" size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

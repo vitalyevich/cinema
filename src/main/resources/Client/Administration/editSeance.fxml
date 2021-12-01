@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Administration.SeanceController">
+   <children>
+      <AnchorPane layoutX="-68.0" layoutY="-12.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <VBox layoutX="50.0" layoutY="30.0" prefHeight="303.0" prefWidth="205.0" spacing="40.0">
+               <children>
+                  <Label text="№">
+                     <font>
+                        <Font name="Cambria Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="Дата">
+                     <font>
+                        <Font name="Cambria Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="Время начала">
+                     <font>
+                        <Font name="Cambria Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="Название залла">
+                     <font>
+                        <Font name="Cambria Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="Название фильма">
+                     <font>
+                        <Font name="Cambria Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="Качество фильма">
+                     <font>
+                        <Font name="Cambria Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <JFXButton fx:id="buttonSave" layoutX="175.0" layoutY="441.0" onMouseClicked="#onClicked_Save" prefHeight="44.0" prefWidth="257.0" ripplerFill="WHITE" style="-fx-background-radius: 20;" styleClass="button-view" stylesheets="@../../css/style.css" text="Сохранить" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="19.0" />
+               </font>
+            </JFXButton>
+            <VBox layoutX="271.0" layoutY="28.0" prefHeight="324.0" prefWidth="300.0" spacing="23.0">
+               <children>
+                  <JFXComboBox fx:id="number" focusColor="#070707" onAction="#onAction_Number" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                  <JFXDatePicker fx:id="date" defaultColor="BLACK" editable="false" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" />
+                  <JFXTimePicker fx:id="time" defaultColor="BLACK" prefWidth="300.0" />
+                  <JFXComboBox fx:id="hall" focusColor="#070707" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXComboBox>
+                  <JFXComboBox fx:id="film" focusColor="#070707" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                  <JFXComboBox fx:id="screen" focusColor="#070707" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+               </children>
+            </VBox>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
