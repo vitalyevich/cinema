@@ -14,4 +14,5 @@ public interface SeatDAO {
     public List<Seat> view();
     public List<Seat> search(int searchId);
     public List<Seat> searchCategory(int idHall, int row, int seat);
+    public int searchSeatByRow(int row);
 }

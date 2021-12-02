@@ -12,8 +12,8 @@ import javafx.scene.input.MouseEvent;
 public class AdministrationController extends Open {
 
 
-    private final String STYLE_EXITED = "-fx-background-color:    linear-gradient(to right top, #f34336, #f8704d, #fb936a, #feb38c, #ffd1b4); -fx-text-fill: white; -fx-background-radius: 1em";
-    private final String STYLE_MOVED = "-fx-background-color: #ffd1b4; -fx-text-fill: white; -fx-background-radius: 1em";
+    private final String STYLE_EXITED = "-fx-background-color: #3f3f3f; -fx-text-fill: white; -fx-background-radius: 1em";
+    private final String STYLE_MOVED = "-fx-background-color: #bdbebd; -fx-text-fill: white; -fx-background-radius: 1em";
 
     @FXML
     private ResourceBundle resources;

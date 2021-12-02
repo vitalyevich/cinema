@@ -5,6 +5,7 @@ import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import Client.Interfaces.MyListener;
@@ -101,6 +102,16 @@ public class BuffetController extends Open {
     private JFXTextField searchProduct;
 
     @FXML
+    private TableView<ProductType> tableProductType;
+
+    @FXML
+    private TableColumn<ProductType, Integer> numColumn;
+
+    @FXML
+    private TableColumn<ProductType, String> nameTypeColumn;
+
+
+    @FXML
     void onAction_Number(ActionEvent event) throws RemoteException {
 
         List<Product> prod = client.getProductList(number.getValue());
@@ -108,11 +119,6 @@ public class BuffetController extends Open {
         category.getSelectionModel().select(prod.get(0).getType().getId() - 1);
         total.setText(prod.get(0).getAmount() + "");
         price.setText(prod.get(0).getPrice() + "");
-
-    }
-
-    @FXML
-    void onAction_Search(ActionEvent event) {
 
     }
 
@@ -138,8 +144,9 @@ public class BuffetController extends Open {
 
     private MyListener myListener;
 
-    private List<ProductType> productTypes = new ArrayList<>();
+    private ObservableList<ProductType> productTypes = FXCollections.observableArrayList();
     private List<Product> products = new ArrayList<>();
+    private ObservableList<Product> tempData = FXCollections.observableArrayList();
     private ObservableList<Product> productObservableList = FXCollections.observableArrayList();
 
     private List<ProductType> getDataProductType() throws RemoteException {
@@ -172,8 +179,24 @@ public class BuffetController extends Open {
             category.getItems().add(productTypes.get(i).getProductName());
         }
 
-        fillingProductTable();
+        fillingProductTable(productObservableList);
+        fillingProductTypeTable();
         fillingProductType();
+
+        searchProduct.textProperty().addListener((obs, oldText, newText) -> {
+            if (!searchProduct.getText().isEmpty()) {
+                tempData = FXCollections.observableArrayList();
+
+                for (int i = 0; i < productObservableList.size(); i++) {
+                    if (productObservableList.get(i).getProductName().toLowerCase().contains(searchProduct.getText().toLowerCase().trim())) {
+                        tempData.add(productObservableList.get(i));
+                    }
+                }
+                fillingProductTable(tempData);
+            } else {
+                fillingProductTable(productObservableList);
+            }
+        });
     }
 
     private void fillingProductType() throws RemoteException {
@@ -252,12 +275,18 @@ public class BuffetController extends Open {
 
     }
 
-    private void fillingProductTable() {
+    private void fillingProductTable(ObservableList<Product> productObservableList) {
         numberColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
         totalColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         tableProduct.setItems(productObservableList);
+    }
+
+    private void fillingProductTypeTable() {
+        numColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nameTypeColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        tableProductType.setItems(productTypes);
     }
 }

@@ -349,6 +349,10 @@ public class BillingServiceImpl extends UnicastRemoteObject implements BillingSe
         return seatDAO.searchCategory(idHall, row, seat);
     }
 
+    public int getSeatByRow(int row) throws  RemoteException {
+        return seatDAO.searchSeatByRow(row);
+    }
+
     @Override
     public void AddNewCategory(Category category) throws RemoteException, SQLException {
         categoryDAO.save(category);

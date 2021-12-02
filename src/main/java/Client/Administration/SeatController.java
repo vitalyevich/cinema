@@ -152,13 +152,11 @@ public class SeatController extends FilmController {
 
         seats = FXCollections.observableArrayList(client.getSeatList());
         categories = FXCollections.observableArrayList(client.getCategoryList());
+        halls = FXCollections.observableArrayList(client.getHallList());
 
         try {
-            number.getItems().clear();
-            category.getItems().clear();
-
-            for (int i = 0; i < seats.get(seats.size() - 1).getHall().getId(); i++) {
-                number.getItems().add(seats.get(i).getHall().getId());
+            for (int i = 0; i < halls.size(); i++) {
+                number.getItems().add(halls.get(i).getId());
             }
 
             for (int i = 0; i < categories.size(); i++) {

@@ -81,7 +81,7 @@ public class GenreDAOImpl implements GenreDAO{
 
         transaction = session.beginTransaction();
 
-        genres = session.createQuery("from Genre ").list();
+        genres = session.createQuery("from Genre order by id asc").list();
 
         transaction.commit();
         session.close();

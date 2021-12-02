@@ -87,6 +87,7 @@ public interface BillingService extends Remote {
     public List<Seat> getSeatList() throws RemoteException;
     public List<Seat> getSeat(int searchId) throws RemoteException;
     public List<Seat> getSeatCategoryName(int idHall, int row, int seat) throws RemoteException;
+    public int getSeatByRow(int row) throws  RemoteException;
 
     public void AddNewCategory(Category category) throws RemoteException, SQLException;
     public void EditCategory(Category category) throws  RemoteException;

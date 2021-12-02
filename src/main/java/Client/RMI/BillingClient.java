@@ -358,6 +358,11 @@ public class BillingClient implements Client.RMI.BillingService {
     }
 
     @Override
+    public int getSeatByRow(int row) throws  RemoteException {
+        return bs.getSeatByRow(row);
+    }
+
+    @Override
     public void AddNewCategory(Category category) throws RemoteException, SQLException {
         bs.AddNewCategory(category);
     }

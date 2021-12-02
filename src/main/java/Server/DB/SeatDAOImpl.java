@@ -121,4 +121,22 @@ public class SeatDAOImpl implements SeatDAO {
 
         return seats;
     }
+
+    @Override
+    public int searchSeatByRow(int row) {
+
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        transaction = session.beginTransaction();
+        Query query = session.createNativeQuery("SELECT COUNT(seat_num) FROM seats WHERE row_num =:row")
+                .setParameter("row",row);
+
+        int num = (int) query.uniqueResult();
+
+        transaction.commit();
+        session.close();
+
+        return num;
+    }
 }

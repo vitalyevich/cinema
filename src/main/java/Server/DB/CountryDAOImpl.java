@@ -82,7 +82,7 @@ public class CountryDAOImpl implements CountryDAO {
 
         transaction = session.beginTransaction();
 
-        countries = session.createQuery("from Country").list();
+        countries = session.createQuery("from Country order by id asc").list();
 
         transaction.commit();
         session.close();

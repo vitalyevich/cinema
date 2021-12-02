@@ -136,7 +136,7 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <JFXTextField fx:id="searchProduct" focusColor="BLACK" layoutX="22.0" layoutY="13.0" onAction="#onAction_Search" prefHeight="43.0" prefWidth="205.0" promptText="Поиск..." styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                    <JFXTextField fx:id="searchProduct" focusColor="BLACK" layoutX="22.0" layoutY="13.0" prefHeight="43.0" prefWidth="205.0" promptText="Поиск..." styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -148,15 +148,54 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="346.0" layoutY="43.0" prefHeight="697.0" prefWidth="582.0" styleClass="table-cell" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tableProductType" layoutX="346.0" layoutY="43.0" prefHeight="697.0" prefWidth="582.0" styleClass="table-cell" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                           <columns>
-                            <TableColumn maxWidth="1000.0" prefWidth="75.0" text="№" />
-                            <TableColumn prefWidth="177.0" text="Наименование" />
+                            <TableColumn fx:id="numColumn" maxWidth="1000.0" prefWidth="75.0" text="№" />
+                            <TableColumn fx:id="nameTypeColumn" prefWidth="177.0" text="Наименование" />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
+                        <TitledPane animated="false" collapsible="false" layoutX="173.0" layoutY="20.0" prefHeight="309.0" prefWidth="497.0" styleClass="pane" stylesheets="@../../css/style.css" text="Управление">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="268.0" layoutY="31.0" prefHeight="208.0" prefWidth="204.0" spacing="20.0">
+                                       <children>
+                                          <JFXButton prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: black;" styleClass="button-view" stylesheets="@../../css/style.css" text="Добавить" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: black;" styleClass="button-view" stylesheets="@../../css/style.css" text="Редактировать" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: black;" styleClass="button-view" stylesheets="@../../css/style.css" text="Удалить" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: black;" styleClass="button-view" stylesheets="@../../css/style.css" text="Очистить таблицу" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="205.0" spacing="20.0">
+                                       <children>
+                                          <JFXComboBox focusColor="BLACK" prefWidth="205.0" promptText="№" styleClass="combo-box" unFocusColor="BLACK" />
+                                          <JFXTextField focusColor="BLACK" prefWidth="205.0" promptText="Наименование" styleClass="combo-box" unFocusColor="BLACK" />
+                                          <Label text="Путь фото" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
                      </children>
                   </AnchorPane>
                </content>
@@ -165,11 +204,20 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="22.0" layoutY="14.0" prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView layoutX="22.0" layoutY="14.0" prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="№" />
-                            <TableColumn prefWidth="75.0" text="C2" />
+                            <TableColumn maxWidth="1000.0" prefWidth="75.0" text="№" />
+                              <TableColumn prefWidth="138.0" text="Дата" />
+                              <TableColumn prefWidth="138.0" text="Время" />
+                            <TableColumn prefWidth="138.0" text="Продукты" />
+                              <TableColumn prefWidth="138.0" text="Цена" />
+                              <TableColumn prefWidth="154.0" text="Операция" />
+                              <TableColumn prefWidth="154.0" text="Количество" />
+                              <TableColumn prefWidth="154.0" text="Итог" />
                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
                      </children></AnchorPane>
               </content>
@@ -178,11 +226,17 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="700.0" prefWidth="1080.0">
+                        <TableView prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="№" />
-                              <TableColumn prefWidth="75.0" text="C2" />
+                              <TableColumn maxWidth="1000.0" prefWidth="75.0" text="№" />
+                              <TableColumn prefWidth="75.0" text="Дата" />
+                              <TableColumn prefWidth="75.0" text="Время" />
+                              <TableColumn prefWidth="75.0" text="Кассир" />
+                              <TableColumn prefWidth="75.0" text="Цена" />
                            </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
                      </children></AnchorPane>
               </content>

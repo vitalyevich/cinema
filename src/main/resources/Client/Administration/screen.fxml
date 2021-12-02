@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Administration.ScreenController" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Administration.ScreenController">
+   <children>
+      <VBox fx:id="boxId" alignment="TOP_CENTER" layoutX="142.0" layoutY="179.0" prefHeight="534.0" prefWidth="50.0" spacing="45.0">
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="boxSeat" layoutX="266.0" layoutY="179.0" prefHeight="534.0" prefWidth="772.0" />
+      <ImageView fitHeight="60.0" fitWidth="772.0" layoutX="266.0" layoutY="56.0" AnchorPane.topAnchor="56.0">
+         <image>
+            <Image url="@../../../../../../../../../../../Projects/TestProject/src/main/resources/example/testproject/экран.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label" layoutX="1113.0" layoutY="169.0">
+         <font>
+            <Font name="Panton Black Caps" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
