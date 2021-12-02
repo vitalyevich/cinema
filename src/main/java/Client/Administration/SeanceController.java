@@ -71,30 +71,32 @@ public class SeanceController extends FilmController{
     @FXML
     void onClicked_Save(MouseEvent event) throws RemoteException {
 
-        if(!number.getValue().equals("") || date.getValue().equals("") || time.getValue().equals("") ||
-        hall.getValue().equals("") || film.getValue().equals("") || screen.getValue().equals("")) {
-            notification.alert = new JFXAlert((Stage) buttonSave.getScene().getWindow());
-            notification.menu(notification.alert, notification.HEAD_EDIT, notification.BODY_EDIT, notification.yesButton);
+        try {
+            if (!number.getValue().equals("") || !date.getValue().equals("") || !time.getValue().equals("") ||
+                    !hall.getValue().equals("") || !film.getValue().equals("") || !screen.getValue().equals("")) {
+                notification.alert = new JFXAlert((Stage) buttonSave.getScene().getWindow());
+                notification.menu(notification.alert, notification.HEAD_EDIT, notification.BODY_EDIT, notification.yesButton);
 
-            notification.yesButton.setOnAction(ev -> {
-                notification.alert.hideWithAnimation();
+                notification.yesButton.setOnAction(ev -> {
+                    notification.alert.hideWithAnimation();
 
-                try {
-                    searchId();
-                    client.EditSeance(new Seance(date.getValue(),time.getValue(), hall1, film1));
+                    try {
+                        searchId();
+                        client.EditSeance(new Seance(number.getValue(),date.getValue(), time.getValue(), hall1, film1, screen.getValue()));
 
-                    notification.getSuccess(buttonSave, notification.HEAD_EDIT,notification.SUCCESS_EDIT);
+                        notification.getSuccess(buttonSave, notification.HEAD_EDIT, notification.SUCCESS_EDIT);
+                        buttonSave.getScene().getWindow().hide();
 
-                } catch (RemoteException e) {
-                    notification.getError(buttonSave, notification.HEAD_EDIT,notification.ERROR_CONNECT);
-                }
-            });
+                    } catch (RemoteException e) {
+                        notification.getError(buttonSave, notification.HEAD_EDIT, notification.ERROR_CONNECT);
+                    }
+                });
+            } else {
+                notification.getError(buttonSave, notification.HEAD_EDIT, notification.ERROR);
+            }
+        } catch (NullPointerException e) {
+            notification.getError(buttonSave, notification.HEAD_EDIT, notification.ERROR);
         }
-        else {
-            notification.getError(buttonSave, notification.HEAD_EDIT,notification.ERROR);
-        }
-
-        buttonSave.getScene().getWindow().hide();
     }
 
     private Notification notification = new Notification();
@@ -102,31 +104,33 @@ public class SeanceController extends FilmController{
     @FXML
     void onClicked_Add(MouseEvent event) {
 
-        if(!date.getValue().equals("") || !time.getValue().equals("") || hall.getValue().equals("") ||
-        film.getValue().equals("") || screen.getValue().equals("")) {
-            notification.alert = new JFXAlert((Stage) buttonAdd.getScene().getWindow());
-            notification.menu(notification.alert, notification.HEAD_ADD, notification.BODY_ADD, notification.yesButton);
+        try {
+            if (!date.getValue().equals("") || !time.getValue().equals("") || !hall.getValue().equals("") ||
+                    !film.getValue().equals("") || !screen.getValue().equals("")) {
+                notification.alert = new JFXAlert((Stage) buttonAdd.getScene().getWindow());
+                notification.menu(notification.alert, notification.HEAD_ADD, notification.BODY_ADD, notification.yesButton);
 
-            notification.yesButton.setOnAction(ev -> {
-                notification.alert.hideWithAnimation();
+                notification.yesButton.setOnAction(ev -> {
+                    notification.alert.hideWithAnimation();
 
-                try {
-                    searchId();
-                    client.AddNewSeance(new Seance(date.getValue(), time.getValue(), hall1, film1));
-                    notification.getSuccess(buttonAdd, notification.HEAD_ADD,notification.SUCCESS_ADD);
+                    try {
+                        searchId();
+                        client.AddNewSeance(new Seance(date.getValue(), time.getValue(), hall1, film1, screen.getValue()));
+                        notification.getSuccess(buttonAdd, notification.HEAD_ADD, notification.SUCCESS_ADD);
+                        buttonAdd.getScene().getWindow().hide();
 
-                } catch (RemoteException e) {
-                    notification.getError(buttonAdd, notification.HEAD_ADD,notification.ERROR_CONNECT);
-                } catch (SQLException e) {
-                    notification.getError(buttonAdd, notification.HEAD_ADD,notification.ERROR);
-                }
-            });
+                    } catch (RemoteException e) {
+                        notification.getError(buttonAdd, notification.HEAD_ADD, notification.ERROR_CONNECT);
+                    } catch (SQLException e) {
+                        notification.getError(buttonAdd, notification.HEAD_ADD, notification.ERROR);
+                    }
+                });
+            } else {
+                notification.getError(buttonAdd, notification.HEAD_ADD, notification.ERROR);
+            }
+        } catch (NullPointerException e) {
+            notification.getError(buttonAdd, notification.HEAD_ADD, notification.ERROR);
         }
-        else {
-            notification.getError(buttonAdd, notification.HEAD_ADD,notification.ERROR);
-        }
-
-        buttonAdd.getScene().getWindow().hide();
     }
 
 
@@ -134,7 +138,7 @@ public class SeanceController extends FilmController{
     void onClicked_DelDate(MouseEvent event) throws RemoteException {
 
         try {
-            if (!date.getValue().equals("")) { }
+            if (!date.getValue().equals("") || !time.getValue().equals("")) { }
 
             notification.alert = new JFXAlert((Stage) buttonDelDate.getScene().getWindow());
             notification.menu(notification.alert, notification.HEAD_DEL, notification.BODY_DEL, notification.yesButton);
@@ -143,8 +147,7 @@ public class SeanceController extends FilmController{
                 notification.alert.hideWithAnimation();
 
                 try {
-
-                    client.DeleteSeanceByDate(date.getValue());
+                    client.DeleteSeanceByDate(date.getValue(), time.getValue());
 
                     notification.getSuccess(buttonDelDate, notification.HEAD_DEL, notification.SUCCESS_DEL);
 
@@ -174,8 +177,7 @@ public class SeanceController extends FilmController{
 
                 try {
 
-                    searchId();
-                    client.DeleteSeanceByName(film1);
+                    client.DeleteSeanceByName(searchFilmId(film.getValue()));
 
                     notification.getSuccess(buttonDelName, notification.HEAD_DEL, notification.SUCCESS_DEL);
 
@@ -246,6 +248,16 @@ public class SeanceController extends FilmController{
         time.setValue(seances.get(0).getShowTime());
         hall.getSelectionModel().select(seances.get(0).getHall().getId() - 1); //плохой алгоритм
         film.getSelectionModel().select(seances.get(0).getFilm().getId() - 1);
+        screen.getSelectionModel().select(searchScreenId(seances.get(0).getScreen()));
+    }
+
+    private int searchScreenId(String name) {
+        if (name.equals("2D")) {
+            return 0;
+        }
+        else {
+            return 1;
+        }
     }
 
     @FXML
@@ -259,21 +271,23 @@ public class SeanceController extends FilmController{
 
         try {
 
-            for (int i = 0; i < halls.size(); i++) {
-                hall.getItems().add(halls.get(i).getHallName());
-            }
-
             for (int i = 0; i < films.size(); i++) {
                 film.getItems().add(films.get(i).getFilmName());
+            }
+
+            for (int i = 0; i < halls.size(); i++) {
+                hall.getItems().add(halls.get(i).getHallName());
             }
 
             screen.getItems().add("2D");
             screen.getItems().add("3D");
 
+        } catch (NullPointerException e) { }
+
+        try {
             for (int i = 0; i < seances.size(); i++) {
                 number.getItems().add(seances.get(i).getId());
             }
-
         } catch (NullPointerException e) { }
     }
 }

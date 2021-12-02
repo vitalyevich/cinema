@@ -7,6 +7,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 public interface BillingService extends Remote {
@@ -69,8 +70,8 @@ public interface BillingService extends Remote {
     public void AddNewSeance(Seance seance) throws RemoteException, SQLException;
     public void EditSeance(Seance seance) throws  RemoteException;
     public void DeleteSeanceById(int id) throws RemoteException;
-    public void DeleteSeanceByDate(LocalDate date) throws RemoteException;
-    public void DeleteSeanceByName(Film id) throws RemoteException;
+    public void DeleteSeanceByDate(LocalDate date, LocalTime time) throws RemoteException;
+    public void DeleteSeanceByName(int id) throws RemoteException;
     public void TruncateTableSeance() throws RemoteException;
     public List<Seance> getSeanceList() throws RemoteException;
     public List<Seance>  getSeance(int searchId) throws RemoteException;

@@ -317,12 +317,46 @@ public class FilmController extends Open {
 
     @FXML
     void onMouseClicked_clearSeat(MouseEvent event) throws RemoteException {
-        client.TruncateTableSeat();
+        notification.alert = new JFXAlert((Stage) clearSeat.getScene().getWindow());
+        notification.menu(notification.alert, notification.HEAD_DEL, notification.BODY_DEL, notification.yesButton);
+
+        notification.yesButton.setOnAction(ev -> {
+            notification.alert.hideWithAnimation();
+
+            try {
+                client.TruncateTableSeat();
+
+                notification.getSuccess(clearSeat,notification.HEAD_DEL, notification.SUCCESS_DEL);
+
+                clearText();
+                fillingTableSeat();
+
+            } catch (RemoteException e) {
+                notification.getError(clearSeat, notification.HEAD_DEL, notification.ERROR_CONNECT);
+            }
+        });
     }
 
     @FXML
     void onMouseClicked_clearSeance(MouseEvent event) throws RemoteException {
-        client.TruncateTableSeance();
+        notification.alert = new JFXAlert((Stage) clearSeance.getScene().getWindow());
+        notification.menu(notification.alert, notification.HEAD_DEL, notification.BODY_DEL, notification.yesButton);
+
+        notification.yesButton.setOnAction(ev -> {
+            notification.alert.hideWithAnimation();
+
+            try {
+                client.TruncateTableSeance();
+
+                notification.getSuccess(clearSeance,notification.HEAD_DEL, notification.SUCCESS_DEL);
+
+                clearText();
+                fillingTableSeance();
+
+            } catch (RemoteException e) {
+                notification.getError(clearSeance, notification.HEAD_DEL, notification.ERROR_CONNECT);
+            }
+        });
     }
 
     @FXML

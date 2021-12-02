@@ -10,6 +10,7 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 public class BillingServiceImpl extends UnicastRemoteObject implements BillingService {
@@ -260,12 +261,12 @@ public class BillingServiceImpl extends UnicastRemoteObject implements BillingSe
     }
 
     @Override
-    public void DeleteSeanceByDate(LocalDate date) throws RemoteException {
-        sessionDAO.deleteByDate(date);
+    public void DeleteSeanceByDate(LocalDate date, LocalTime time) throws RemoteException {
+        sessionDAO.deleteByDate(date, time);
     }
 
     @Override
-    public void DeleteSeanceByName(Film id) throws RemoteException {
+    public void DeleteSeanceByName(int id) throws RemoteException {
         sessionDAO.deleteByName(id);
     }
 

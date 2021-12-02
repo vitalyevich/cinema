@@ -10,6 +10,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -268,12 +269,12 @@ public class BillingClient implements Client.RMI.BillingService {
     }
 
     @Override
-    public void DeleteSeanceByDate(LocalDate date) throws RemoteException {
-        bs.DeleteSeanceByDate(date);
+    public void DeleteSeanceByDate(LocalDate date, LocalTime time) throws RemoteException {
+        bs.DeleteSeanceByDate(date, time);
     }
 
     @Override
-    public void DeleteSeanceByName(Film id) throws RemoteException {
+    public void DeleteSeanceByName(int id) throws RemoteException {
         bs.DeleteSeanceByName(id);
     }
 

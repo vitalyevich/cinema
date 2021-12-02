@@ -98,18 +98,20 @@ public class Seance implements Serializable {
 
     public Seance() { }
 
-    public Seance(int id, LocalDate showDate, LocalTime showTime, Hall hall, Film film) {
+    public Seance(int id, LocalDate showDate, LocalTime showTime, Hall hall, Film film, String screen) {
         this.id = id;
         this.showDate = showDate;
         this.showTime = showTime;
         this.hall = hall;
         this.film = film;
+        this.screen = screen;
     }
 
-    public Seance(LocalDate showDate, LocalTime showTime, Hall hall, Film film) {
+    public Seance(LocalDate showDate, LocalTime showTime, Hall hall, Film film, String screen) {
         this.showDate = showDate;
         this.showTime = showTime;
         this.hall = hall;
         this.film = film;
+        this.screen = screen;
     }
 }

@@ -56,7 +56,7 @@
                <children>
                   <JFXComboBox fx:id="number" focusColor="#070707" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
                   <JFXDatePicker fx:id="date" defaultColor="BLACK" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" />
-                  <JFXTimePicker fx:id="time" defaultColor="BLACK" prefWidth="300.0" />
+                  <JFXTimePicker fx:id="time" defaultColor="BLACK" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" />
                   <JFXComboBox fx:id="film" focusColor="#070707" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
                </children>
             </VBox>

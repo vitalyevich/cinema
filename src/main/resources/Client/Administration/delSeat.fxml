@@ -39,9 +39,9 @@
       </AnchorPane>
       <VBox layoutX="238.0" layoutY="29.0" prefHeight="195.0" prefWidth="300.0" spacing="23.0">
          <children>
-            <JFXComboBox fx:id="number" focusColor="#070707" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
-            <JFXComboBox fx:id="row" focusColor="#070707" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
-            <JFXComboBox fx:id="seat" focusColor="#070707" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+            <JFXComboBox fx:id="number" focusColor="#070707" onAction="#onAction_Number" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+            <JFXComboBox fx:id="row" focusColor="#070707" onAction="#onAction_Row" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+            <JFXComboBox fx:id="seat" focusColor="#070707" onAction="#onAction_Seat" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
          </children>
       </VBox>
    </children>

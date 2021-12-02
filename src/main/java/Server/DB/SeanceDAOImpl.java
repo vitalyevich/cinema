@@ -7,7 +7,9 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.sql.SQLException;
+import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,17 +20,22 @@ public class SeanceDAOImpl implements SeanceDAO {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction transaction = null;
 
+        System.out.println(seance.getShowTime());
+
         transaction = session.beginTransaction();
-        Query query = session.createQuery("FROM Seance WHERE showTime = :showTime"); // чтобы разница была
+        session.save(seance);
+/*
+        Query query = session.createQuery("FROM Seance WHERE showDate =:showDate AND showTime =:showTime");
+        query.setParameter("showDate", seance.getShowDate());
         query.setParameter("showTime", seance.getShowTime());
 
-        if(query.list().isEmpty()){
-            session.save(seance);
-        }
-        else {
-            throw new SQLException();
-        }
+        seances = query.list();
 
+        if (seances.isEmpty()) {
+            session.save(seance);
+        } else {
+            throw new SQLException();
+        }*/
         transaction.commit();
         session.close();
     }
@@ -44,6 +51,7 @@ public class SeanceDAOImpl implements SeanceDAO {
         seance1.setShowTime(seance.getShowTime());
         seance1.setHall(seance.getHall());
         seance1.setFilm(seance.getFilm());
+        seance1.setScreen(seance.getScreen());
         session.update(seance1);
         transaction.commit();
         session.close();
@@ -62,11 +70,11 @@ public class SeanceDAOImpl implements SeanceDAO {
     }
 
     @Override
-    public void deleteByName(Film id) {
+    public void deleteByName(int id) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction transaction = null;
         transaction = session.beginTransaction();
-        Query query = session.createQuery("DELETE FROM Seance WHERE film =: id");
+        Query query = session.createQuery("DELETE FROM Seance WHERE film.id =:id");
         query.setParameter("id", id);
         query.executeUpdate();
         transaction.commit();
@@ -74,13 +82,14 @@ public class SeanceDAOImpl implements SeanceDAO {
     }
 
     @Override
-    public void deleteByDate(LocalDate date) {
+    public void deleteByDate(LocalDate date, LocalTime time) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction transaction = null;
 
-        transaction = session.beginTransaction();
-        Query query = session.createQuery("DELETE FROM Seance WHERE showDate =: date");
+        transaction = session.beginTransaction(); // time not
+        Query query = session.createQuery("DELETE FROM Seance WHERE showDate =: date AND showTime =:time");
         query.setParameter("date", date);
+        query.setParameter("time", time);
         query.executeUpdate();
         transaction.commit();
         session.close();

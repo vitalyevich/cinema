@@ -418,13 +418,13 @@ public class StaffController extends Open implements Verifiable {
 
             try {
                 client.TruncateTableStaff();
-                notification.getSuccess(buttonAllDel,notification.HEAD_DEL, notification.SUCCESS_DEL);
+                notification.getSuccess(buttonClear,notification.HEAD_DEL, notification.SUCCESS_DEL);
 
                 clearText();
                 fillingTableStaff();
 
             } catch (RemoteException e) {
-                notification.getError(buttonAllDel, notification.HEAD_DEL, notification.ERROR_CONNECT);
+                notification.getError(buttonClear, notification.HEAD_DEL, notification.ERROR_CONNECT);
             }
         });
     }

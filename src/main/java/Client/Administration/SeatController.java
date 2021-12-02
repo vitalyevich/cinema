@@ -1,10 +1,9 @@
 package Client.Administration;
 
+import Client.Model.Notification;
 import Client.RMI.BillingClient;
-import Server.Model.Category;
-import Server.Model.Hall;
-import Server.Model.Seat;
-import Server.Model.SeatId;
+import Server.Model.*;
+import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -18,6 +17,8 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import org.mindrot.jbcrypt.BCrypt;
 
 public class SeatController extends FilmController {
 
@@ -67,31 +68,98 @@ public class SeatController extends FilmController {
     @FXML
     void onClicked_Save(MouseEvent event) throws RemoteException {
 
-        setParameter();
-        category1.setId(searchCategoryId(category.getValue()));
+        try {
 
-        client.EditSeat(new Seat(seatId,hall, category1));
+            if(number.getValue().equals("") || row.getValue().equals("") || seat.getValue().equals("")
+                    || category.getValue().equals("")) {
+                throw new NullPointerException();
+            }
 
-        buttonSave.getScene().getWindow().hide();
+            notification.alert = new JFXAlert((Stage) buttonSave.getScene().getWindow());
+            notification.menu(notification.alert, notification.HEAD_EDIT, notification.BODY_EDIT, notification.yesButton);
+
+            notification.yesButton.setOnAction(ev -> {
+                notification.alert.hideWithAnimation();
+                try {
+                    setParameter();
+                    category1.setId(searchCategoryId(category.getValue()));
+
+                    client.EditSeat(new Seat(seatId,hall, category1));
+                    buttonSave.getScene().getWindow().hide();
+
+                } catch (RemoteException e) {
+                    notification.getError(buttonSave, notification.HEAD_EDIT, notification.ERROR_CONNECT);
+                }
+            });
+        } catch (NullPointerException e) {
+            notification.getError(buttonSave, notification.HEAD_EDIT, notification.ERROR);
+        }
     }
 
     @FXML
-    void onClicked_Add(MouseEvent event) throws RemoteException, SQLException {
+    void onClicked_Add(MouseEvent event) {
+        try {
 
-        setParameter();
-        category1.setId(searchCategoryId(category.getValue()));
+            if (number.getValue().equals("") || rowText.getText().isEmpty() || seatText.getText().isEmpty()
+                    || category.getValue().equals("")) {
+                throw new NullPointerException();
+            }
 
-        client.AddNewSeat(new Seat(seatId,hall, category1));
-        buttonAdd.getScene().getWindow().hide();
+            notification.alert = new JFXAlert((Stage) buttonAdd.getScene().getWindow());
+            notification.menu(notification.alert, notification.HEAD_ADD,notification.BODY_ADD, notification.yesButton);
+
+            notification.yesButton.setOnAction(ev -> {
+                notification.alert.hideWithAnimation();
+
+                try {
+                    setParameter();
+                    category1.setId(searchCategoryId(category.getValue()));
+
+                    client.AddNewSeat(new Seat(seatId,hall, category1));
+                    buttonAdd.getScene().getWindow().hide();
+
+                } catch (RemoteException e) {
+                    notification.getError(buttonAdd,  notification.HEAD_ADD, notification.ERROR_CONNECT);
+                } catch (SQLException e) {
+                    notification.getError(buttonAdd,  notification.HEAD_ADD, notification.ERROR);
+                }
+            });
+
+        } catch (NullPointerException e) {
+            notification.getError(buttonAdd,  notification.HEAD_ADD, notification.ERROR);
+        }
     }
+
+    private Notification notification = new Notification();
 
     @FXML
     void onClicked_Del(MouseEvent event) throws RemoteException {
+        try {
 
-        setParameter();
-        client.DeleteSeat(new Seat(seatId,hall));
+            if (number.getValue().equals("") || row.getValue().equals("") || seat.getValue().equals("")) {
+                throw new NullPointerException();
+            }
 
-        buttonDel.getScene().getWindow().hide();
+            notification.alert = new JFXAlert((Stage) buttonDel.getScene().getWindow());
+            notification.menu(notification.alert, notification.HEAD_DEL, notification.BODY_DEL, notification.yesButton);
+
+            notification.yesButton.setOnAction(ev -> {
+                notification.alert.hideWithAnimation();
+
+                try {
+                    setParameter();
+                    client.DeleteSeat(new Seat(seatId,hall));
+
+                    buttonDel.getScene().getWindow().hide();
+
+                    notification.getSuccess(buttonDel, notification.HEAD_DEL, notification.SUCCESS_DEL);
+                } catch (RemoteException e) {
+                    notification.getError(buttonDel, notification.HEAD_DEL, notification.ERROR_CONNECT);
+                }
+            });
+        } catch (NullPointerException e) {
+            notification.getError(buttonDel, notification.HEAD_DEL, notification.ERROR);
+        }
     }
 
     private int searchCategoryId(String name) {
@@ -135,9 +203,9 @@ public class SeatController extends FilmController {
 
     @FXML
     void onAction_Seat(ActionEvent event) throws RemoteException { // проверок добавить
-
-        // алгоритм
-        category.getSelectionModel().select(searchCategoryName() - 1); // выбор места в зависимости от ряда и места
+        try {
+            category.getSelectionModel().select(searchCategoryName() - 1); // выбор места в зависимости от ряда и места
+        } catch (NullPointerException e) { }
     }
 
     private int searchCategoryName() throws RemoteException {
