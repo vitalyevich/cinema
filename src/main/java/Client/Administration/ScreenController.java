@@ -28,7 +28,10 @@ public class ScreenController extends FilmController {
     private URL location;
 
     @FXML
-    private VBox boxId;
+    private VBox boxIdRight;
+
+    @FXML
+    private VBox boxIdLeft;
 
     @FXML
     private VBox boxSeat;
@@ -47,23 +50,30 @@ public class ScreenController extends FilmController {
         setSeat();
     }
 
+    private Label setText(Label text, int i) {
+        text = new Label();
+        text.setStyle("-fx-font-family: Cambria; -fx-font-size: 22;");
+        text.setText("" + i);
+        return text;
+    }
+
+
     private void setSeat() throws RemoteException { //List<Seat> seatList, List<Hall> hallList
         this.seatList = seatList;
         this.hallList = hallList;
 
         HBox hBox = null;
         Button button = null;
-        Text text = null;
+        Label text = null;
 
         for (int i = 1; i <= hallList.get(0).getRowTotal(); i++) {
 
-            text = new Text();
-            text.setText("" + i);
-            boxId.getChildren().addAll(text);
+            boxIdRight.getChildren().add(setText(text, i));
+            boxIdLeft.getChildren().add(setText(text, i));
 
             hBox = new HBox();
-            hBox.setSpacing(5);
-            hBox.setPrefHeight(67);
+            hBox.setSpacing(6);
+            hBox.setPrefHeight(62);
             hBox.setAlignment(Pos.CENTER);
 
 
@@ -72,12 +82,13 @@ public class ScreenController extends FilmController {
             for (int j = 1; j <= seat; j++) {
                 button = new Button("" + j);
 
-                button.setPrefWidth(60);
-                button.setPrefHeight(60);
-                button.setStyle("-fx-background-radius: 17; -fx-background-color:  #013f78; -fx-text-fill: white");
+                button.setPrefWidth(55);
+                button.setPrefHeight(55);
+                button.setStyle("-fx-background-radius: 15; -fx-background-color:  #013f78; -fx-text-fill: white;" +
+                        "-fx-font-family: Cambria ; -fx-font-size: 20; -fx-font-weight: bold;");
 
                 Button finalButton = button;
-                Text finalText = text;
+                Label finalText = setText(text,i);
 
                 button.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
@@ -89,14 +100,16 @@ public class ScreenController extends FilmController {
                 button.setOnMouseMoved(new EventHandler() {
                     @Override
                     public void handle(Event event) {
-                        finalButton.setStyle("-fx-background-color: green; -fx-background-radius: 17; -fx-text-fill: white");
+                        finalButton.setStyle("-fx-background-color: green; -fx-background-radius: 15; -fx-text-fill: white;" +
+                                "-fx-font-family: Cambria; -fx-font-size: 20; -fx-font-weight: bold;");
                     }
                 });
                 button.setOnMouseExited(new EventHandler() {
 
                     @Override
                     public void handle(Event event) {
-                        finalButton.setStyle("-fx-background-color: #013f78; -fx-background-radius: 17; -fx-text-fill: white");
+                        finalButton.setStyle("-fx-background-color: #013f78; -fx-background-radius: 15; -fx-text-fill: white;" +
+                                "-fx-font-family: Cambria; -fx-font-size: 20; -fx-font-weight: bold;");
                     }
                 });
                 hBox.getChildren().add(button);

@@ -91,7 +91,7 @@
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="67.0" prefWidth="279.0" style="-fx-background-color: white;" styleClass="data-view">
                                  <children>
-                                    <JFXDatePicker fx:id="sortDate" defaultColor="BLACK" layoutX="13.0" layoutY="12.0" onAction="#onAction_sortDate" prefHeight="43.0" prefWidth="257.0" promptText="Выберите дату" style="-fx-font-size: 20;" stylesheets="@../../css/style.css" />
+                                    <JFXDatePicker fx:id="sortDate" defaultColor="BLACK" layoutX="13.0" layoutY="12.0" onAction="#onAction_sortDate" prefHeight="43.0" prefWidth="257.0" promptText="Выберите дату" style="-fx-font-size: 20;" />
                                  </children>
                               </AnchorPane>
                           </content>
@@ -149,7 +149,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="hallTable" layoutX="525.0" layoutY="18.0" prefHeight="707.0" prefWidth="745.0" styleClass="table-cell" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="525.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                        <TableView fx:id="hallTable" layoutX="515.0" layoutY="18.0" prefHeight="707.0" prefWidth="755.0" styleClass="table-cell" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="515.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                           <columns>
                             <TableColumn fx:id="numColumn" maxWidth="1500.0" prefWidth="75.0" text="№" />
                             <TableColumn fx:id="hallColumn" maxWidth="3000.0" prefWidth="75.0" text="Название залла" />
@@ -215,7 +215,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="seatTable" layoutX="420.0" layoutY="58.0" prefHeight="525.0" prefWidth="560.0" styleClass="table-cell" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="420.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                        <TableView fx:id="seatTable" layoutX="327.0" layoutY="58.0" prefHeight="707.0" prefWidth="943.0" styleClass="table-cell" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="327.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                           <columns>
                             <TableColumn fx:id="namHallColumn" maxWidth="1000.0" prefWidth="99.0" text="Номер залла" />
                             <TableColumn fx:id="rowColumn" maxWidth="500.0" minWidth="0.0" prefWidth="51.0" text="Ряд" />
@@ -226,7 +226,7 @@
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <TitledPane animated="false" collapsible="false" layoutX="53.0" layoutY="20.0" prefHeight="111.0" prefWidth="290.0" styleClass="pane" text="Фильтрация" AnchorPane.leftAnchor="53.0">
+                        <TitledPane animated="false" collapsible="false" layoutX="53.0" layoutY="20.0" prefHeight="111.0" prefWidth="290.0" styleClass="pane" text="Фильтрация" AnchorPane.leftAnchor="20.0">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="64.0" prefWidth="288.0" style="-fx-background-color: white;">
                                  <children>
@@ -239,7 +239,7 @@
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane animated="false" collapsible="false" layoutX="55.0" layoutY="165.0" prefHeight="298.0" prefWidth="286.0" styleClass="pane" text="Управление" AnchorPane.leftAnchor="55.0">
+                        <TitledPane animated="false" collapsible="false" layoutX="55.0" layoutY="165.0" prefHeight="298.0" prefWidth="286.0" styleClass="pane" text="Управление" AnchorPane.leftAnchor="20.0">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="288.0" style="-fx-background-color: white;">
                                  <children>
@@ -287,7 +287,7 @@
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <TitledPane animated="false" collapsible="false" layoutX="17.0" layoutY="20.0" prefHeight="291.0" prefWidth="559.0" styleClass="pane" text="Управление">
+                        <TitledPane animated="false" collapsible="false" layoutX="17.0" layoutY="20.0" prefHeight="291.0" prefWidth="564.0" styleClass="pane" text="Управление">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="288.0" style="-fx-background-color: white;">
                                  <children>
@@ -346,9 +346,9 @@
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <TitledPane animated="false" collapsible="false" layoutX="23.0" layoutY="30.0" prefHeight="282.0" prefWidth="543.0" styleClass="pane" text="Управление" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                        <TitledPane animated="false" collapsible="false" layoutX="23.0" layoutY="30.0" prefHeight="282.0" prefWidth="561.0" styleClass="pane" text="Управление" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="288.0" style="-fx-background-color: white;">
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="562.0" style="-fx-background-color: white;">
                                  <children>
                                     <VBox alignment="CENTER" layoutX="295.0" layoutY="10.0" prefHeight="223.0" prefWidth="232.0" spacing="20.0">
                                        <children>
@@ -396,7 +396,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="countryTable" layoutX="589.0" layoutY="20.0" prefHeight="707.0" prefWidth="655.0" styleClass="table-cell" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                        <TableView fx:id="countryTable" layoutX="609.0" layoutY="20.0" prefHeight="707.0" prefWidth="655.0" styleClass="table-cell" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="615.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                            <columns>
                               <TableColumn fx:id="nmrcColumn" maxWidth="500.0" prefWidth="75.0" text="№" />
                               <TableColumn fx:id="nameCountryColumn" prefWidth="75.0" text="Страна" />
@@ -405,7 +405,7 @@
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <TitledPane animated="false" collapsible="false" layoutX="87.0" layoutY="40.0" prefHeight="291.0" prefWidth="563.0" styleClass="pane" text="Управление" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                        <TitledPane animated="false" collapsible="false" layoutX="87.0" layoutY="40.0" prefHeight="291.0" prefWidth="575.0" styleClass="pane" text="Управление" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="288.0" style="-fx-background-color: white;">
                                  <children>
