@@ -291,7 +291,23 @@ public class FilmController extends Open {
 
     @FXML
     void onMouseClicked_clearFilm(MouseEvent event) throws RemoteException {
-        client.TruncateTableFilm();
+        notification.alert = new JFXAlert((Stage) clearFilm.getScene().getWindow());
+        notification.menu(notification.alert, notification.HEAD_DEL, notification.BODY_DEL, notification.yesButton);
+
+        notification.yesButton.setOnAction(ev -> {
+            notification.alert.hideWithAnimation();
+
+            try {
+                client.TruncateTableFilm();
+                notification.getSuccess(clearFilm, notification.HEAD_DEL,notification.SUCCESS_DEL);
+
+                clearText();
+                fillingTableFilm();
+
+            } catch (RemoteException e) {
+                notification.getError(clearFilm, notification.HEAD_DEL,notification.ERROR_CONNECT);
+            }
+        });
     }
 
     @FXML

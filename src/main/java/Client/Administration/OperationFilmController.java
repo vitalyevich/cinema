@@ -1,11 +1,10 @@
 package Client.Administration;
 
+import Client.Model.Notification;
 import Client.RMI.BillingClient;
 import Server.Model.*;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXTextArea;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
+
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.List;
@@ -15,6 +14,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class OperationFilmController extends FilmController {
 
@@ -287,13 +287,58 @@ public class OperationFilmController extends FilmController {
 
     @FXML
     void onClicked_DelName(MouseEvent event) throws RemoteException {
-        client.DeleteFilm(name.getText());
+        if (!name.getText().equals("")) {
+            notification.alert = new JFXAlert((Stage) delName.getScene().getWindow());
+            notification.menu(notification.alert, notification.HEAD_DEL, notification.BODY_DEL, notification.yesButton);
+
+            notification.yesButton.setOnAction(ev -> {
+                notification.alert.hideWithAnimation();
+
+                try {
+
+                    client.DeleteFilm(name.getText());
+
+                    notification.getSuccess(delName, notification.HEAD_DEL, notification.SUCCESS_DEL);
+
+                } catch (RemoteException e) {
+                    notification.getError(delName, notification.HEAD_DEL, notification.ERROR_CONNECT);
+                }
+            });
+        } else {
+            notification.getError(delName, notification.HEAD_DEL, notification.ERROR);
+        }
+
         delName.getScene().getWindow().hide();
     }
 
+    private Notification notification = new Notification();
+
     @FXML
     void onClicked_DelNumber(MouseEvent event) throws RemoteException {
-        client.DeleteFilmById(number.getValue());
+        try {
+            if (!number.getValue().equals("")) { }
+
+            notification.alert = new JFXAlert((Stage) delNumber.getScene().getWindow());
+            notification.menu(notification.alert, notification.HEAD_DEL, notification.BODY_DEL, notification.yesButton);
+
+            notification.yesButton.setOnAction(ev -> {
+                notification.alert.hideWithAnimation();
+
+                try {
+
+                    client.DeleteFilmById(number.getValue());
+
+                    notification.getSuccess(delNumber, notification.HEAD_DEL, notification.SUCCESS_DEL);
+
+                } catch (RemoteException e) {
+                    notification.getError(delNumber, notification.HEAD_DEL, notification.ERROR_CONNECT);
+                }
+            });
+
+        } catch (NullPointerException e) {
+            notification.getError(delNumber, notification.HEAD_DEL,notification.ERROR);
+        }
+
         delNumber.getScene().getWindow().hide();
     }
 

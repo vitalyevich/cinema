@@ -444,7 +444,7 @@ public class BillingServiceImpl extends UnicastRemoteObject implements BillingSe
         return countryDAO.search(searchId);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { // смена порта, отключение/включение сервера + проверка связи с бд
 
         String localhost = "127.0.0.1";
         String RMI_HOSTNAME = "java.rmi.server.hostname";
