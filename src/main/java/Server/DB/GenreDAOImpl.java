@@ -1,5 +1,6 @@
 package Server.DB;
 
+import Server.Model.CountriesName;
 import Server.Model.Genre;
 import Server.Model.GenresName;
 import org.hibernate.Session;
@@ -104,14 +105,37 @@ public class GenreDAOImpl implements GenreDAO{
     }
 
     @Override
-    public void addTotal(GenresName genresName) {
+    public void addTotal(GenresName genresName) throws SQLException {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction transaction = null;
 
         transaction = session.beginTransaction();
 
-        session.save(genresName);
+        Query query = session.createQuery("FROM GenresName WHERE id.filmId = :filmId AND id.genreId = :genreId");
+        query.setParameter("filmId", genresName.getId().getFilmId());
+        query.setParameter("genreId", genresName.getId().getGenreId());
 
+        if(query.list().isEmpty()){
+            session.save(genresName);
+        }
+        else {
+            throw new SQLException();
+        }
+
+        transaction.commit();
+        session.close();
+    }
+
+    @Override
+    public void updateTotal(GenresName genresName) throws SQLException {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        transaction = session.beginTransaction();
+
+        GenresName genresName1 = (GenresName) session.get(GenresName.class, genresName.getId());
+        genresName1.setId(genresName.getId());
+        session.update(genresName1);
         transaction.commit();
         session.close();
     }

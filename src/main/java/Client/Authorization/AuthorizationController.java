@@ -189,7 +189,7 @@ public class AuthorizationController extends Open implements Verifiable {
 
                         accesses = client.findByAccess(lastName, password);
 
-                        if (!(accesses == null)) {
+                        if (!accesses.isEmpty()) {
 
                                 Platform.runLater(() -> {
                                     labelError.setText("");
@@ -209,7 +209,11 @@ public class AuthorizationController extends Open implements Verifiable {
                     else {
                       throw new IndexOutOfBoundsException();
                     }
-                    setTimer();
+                    Platform.runLater(() -> {
+                        labelError.setText("Вы ввели неверно логин или пароль!");
+                        ++counter;
+                        setTimer();
+                    });
 
                 } catch (RemoteException e) {
                     e.printStackTrace();

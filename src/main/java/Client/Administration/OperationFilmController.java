@@ -7,6 +7,7 @@ import com.jfoenix.controls.*;
 
 import java.net.URL;
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -75,6 +76,9 @@ public class OperationFilmController extends FilmController {
 
     @FXML
     void onAction_Number(ActionEvent event) throws RemoteException {
+
+        // очистить comboBox + EDIT НЕ РАБОТАЕТ И СДЕЛАТЬ ПРОВЕРКУ ДЛЯ EDIT
+
         List<Film> filmList = client.getFilm(Integer.parseInt(String.valueOf(number.getValue())));
         name.setText(filmList.get(0).getFilmName());
         year.setText(filmList.get(0).getReleaseDate() + "");
@@ -116,8 +120,6 @@ public class OperationFilmController extends FilmController {
             }
         }
 
-      /*  country.getSelectionModel().select(filmList.get(0).getCountry().getId() - 1);
-        genre.getSelectionModel().select(filmList.get(0).getGenre().getId() - 1);*/
     }
 
 
@@ -191,75 +193,102 @@ public class OperationFilmController extends FilmController {
     private GenresNameId genresNameId = new GenresNameId();
     private CountriesNameId countriesNameId = new CountriesNameId();
 
+    private int searchIdCountry(String name) {
+        for (int i = 0; i < countries.size(); i++) {
+            if (countries.get(i).getCountryName().equals(name)) {
+                return i+1;
+            }
+        }
+        return 0;
+    }
+
+    private int searchIdGenre(String name) {
+        for (int i = 0; i < genres.size(); i++) {
+            if (genres.get(i).getGenreName().equals(name)) {
+                return i+1;
+            }
+        }
+        return 0;
+    }
+
     @FXML
-    void onClicked_Add(MouseEvent event) throws RemoteException {
+    void onClicked_Add(MouseEvent event) {
+        try {
+            if (name.getText().equals("") || year.getText().equals("") || time.getText().equals("") ||
+                    description.getText().equals("") || age.getText().equals("") || rating.getText().equals("") ||
+                    country.getValue().equals("") || genre.getValue().equals("")) {
 
-        int filmId = films.get(films.size() - 1).getId() + 1;
+                throw new NullPointerException();
 
-       // searchId();
-        if (!name.getText().equals("") || !year.getText().equals("") || !time.getText().equals("") ||
-        !description.getText().equals("") || !age.getText().equals("") || !rating.getText().equals("") ||
-                !country.getValue().equals("") || genre.getValue().equals("")) {
-            // проверка на ввод корректных данных
-            client.AddNewFilm(new Film(name.getText(), Integer.parseInt(year.getText()), Integer.parseInt(time.getText()),
-                    description.getText(), Integer.parseInt(age.getText()), Double.parseDouble(rating.getText())));
-
-
-
-            genresNameId.setFilmId(filmId);
-            countriesNameId.setFilmId(filmId);
-
-            if (!country1.getValue().equals("")) {
-                if (!country2.getValue().equals("")) {
-                    if (!country3.getValue().equals("")) {
-                        countriesNameId.setCountryId(Integer.parseInt(country3.getValue()));
-                        client.AddNewFilmCountry(new CountriesName(countriesNameId));
-                    }
-                    else {
-                        countriesNameId.setCountryId(Integer.parseInt(country2.getValue()));
-                        client.AddNewFilmCountry(new CountriesName(countriesNameId));
-                    }
-                }
-                else {
-                    countriesNameId.setCountryId(Integer.parseInt(country1.getValue()));
-                    client.AddNewFilmCountry(new CountriesName(countriesNameId));
-                }
             }
-            else {
-                countriesNameId.setCountryId(Integer.parseInt(country.getValue()));
-                client.AddNewFilmCountry(new CountriesName(countriesNameId));
-            }
+                notification.alert = new JFXAlert((Stage) buttonAdd.getScene().getWindow());
+                notification.menu(notification.alert, notification.HEAD_ADD, notification.BODY_ADD, notification.yesButton);
 
-            if (!genre1.getValue().equals("")) {
-                if (!genre2.getValue().equals("")) {
-                    if (!genre3.getValue().equals("")) {
-                        genresNameId.setGenreId(Integer.parseInt(genre3.getValue()));
-                        client.AddNewFilmGenre(new GenresName(genresNameId));
+                notification.yesButton.setOnAction(ev -> {
+                    notification.alert.hideWithAnimation();
+
+                    try {
+                        int filmId = films.get(films.size() - 1).getId() + 1;
+
+                        client.AddNewFilm(new Film(name.getText(), Integer.parseInt(year.getText()), Integer.parseInt(time.getText()),
+                                description.getText(), Integer.parseInt(age.getText()), Double.parseDouble(rating.getText())));
+
+                        try {
+                            countriesNameId.setCountryId(searchIdCountry(country.getValue()));
+                            countriesNameId.setFilmId(filmId);
+                            client.AddNewFilmCountry(new CountriesName(countriesNameId));
+
+                            country1.getValue().equals("");
+                            countriesNameId.setCountryId(searchIdCountry(country1.getValue()));
+                            countriesNameId.setFilmId(filmId);
+                            client.AddNewFilmCountry(new CountriesName(countriesNameId));
+
+                            country2.getValue().equals("");
+                            countriesNameId.setCountryId(searchIdCountry(country2.getValue()));
+                            countriesNameId.setFilmId(filmId);
+                            client.AddNewFilmCountry(new CountriesName(countriesNameId));
+
+                            country3.getValue().equals("");
+                            countriesNameId.setCountryId(searchIdCountry(country3.getValue()));
+                            countriesNameId.setFilmId(filmId);
+                            client.AddNewFilmCountry(new CountriesName(countriesNameId));
+
+                        } catch (NullPointerException e) { }
+
+                        try {
+                            genresNameId.setGenreId(searchIdGenre(genre.getValue()));
+                            genresNameId.setFilmId(filmId);
+                            client.AddNewFilmGenre(new GenresName(genresNameId));
+
+                            genre1.getValue().equals("");
+                            genresNameId.setGenreId(searchIdGenre(genre1.getValue()));
+                            genresNameId.setFilmId(filmId);
+                            client.AddNewFilmGenre(new GenresName(genresNameId));
+
+                            genre2.getValue().equals("");
+                            genresNameId.setGenreId(searchIdGenre(genre2.getValue()));
+                            genresNameId.setFilmId(filmId);
+                            client.AddNewFilmGenre(new GenresName(genresNameId));
+
+                            genre3.getValue().equals("");
+                            genresNameId.setGenreId(searchIdGenre(genre3.getValue()));
+                            genresNameId.setFilmId(filmId);
+                            client.AddNewFilmGenre(new GenresName(genresNameId));
+                        } catch (NullPointerException e) { }
+                        finally {
+                            notification.getSuccess(buttonAdd, notification.HEAD_ADD, notification.SUCCESS_ADD);
+                            buttonAdd.getScene().getWindow().hide();
+                        }
+
+                    } catch (RemoteException e) {
+                        notification.getError(buttonAdd, notification.HEAD_ADD, notification.ERROR_CONNECT);
+                    } catch (SQLException e) {
+                        notification.getError(buttonAdd, notification.HEAD_ADD, notification.ERROR);
                     }
-                    else {
-                        genresNameId.setGenreId(Integer.parseInt(genre2.getValue()));
-                        client.AddNewFilmGenre(new GenresName(genresNameId));
-                    }
-                }
-                else {
-                    genresNameId.setGenreId(Integer.parseInt(genre1.getValue()));
-                    client.AddNewFilmGenre(new GenresName(genresNameId));
-                }
-            }
-            else {
-                genresNameId.setGenreId(Integer.parseInt(genre.getValue()));
-                client.AddNewFilmGenre(new GenresName(genresNameId));
-            }
-
-
-            // проверить заполнены ли жанры и страны!
-            // жанры отдельно
+                });
+        } catch (NullPointerException e) {
+            notification.getError(buttonAdd, notification.HEAD_ADD, notification.ERROR);
         }
-        else {
-
-        }
-
-    buttonAdd.getScene().getWindow().hide();
     }
 
     @FXML
@@ -267,15 +296,82 @@ public class OperationFilmController extends FilmController {
 
     @FXML
     void onClicked_Save(MouseEvent event) {
-/*
         try {
-            client.EditFilm(new Film(number.getValue(),name.getText(), country1, Integer.parseInt(year.getText()), genre1,
-                    Integer.parseInt(time.getText()), Long.parseLong(money.getText()),
-                    description.getText(), Float.parseFloat(rating.getText())));
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }*/
-        buttonSave.getScene().getWindow().hide();
+            if (name.getText().equals("") || year.getText().equals("") || time.getText().equals("") ||
+                    description.getText().equals("") || age.getText().equals("") || rating.getText().equals("") ||
+                    country.getValue().equals("") || genre.getValue().equals("")) {
+
+                throw new NullPointerException();
+
+            }
+            notification.alert = new JFXAlert((Stage) buttonSave.getScene().getWindow());
+            notification.menu(notification.alert, notification.HEAD_EDIT, notification.BODY_EDIT, notification.yesButton);
+
+            notification.yesButton.setOnAction(ev -> {
+                notification.alert.hideWithAnimation();
+
+                try {
+                    int filmId = number.getValue();
+
+                    client.EditFilm(new Film(number.getValue(),name.getText(), Integer.parseInt(year.getText()), Integer.parseInt(time.getText()),
+                            description.getText(), Integer.parseInt(age.getText()), Double.parseDouble(rating.getText())));
+
+                    try {
+                        countriesNameId.setCountryId(searchIdCountry(country.getValue()));
+                        countriesNameId.setFilmId(filmId);
+                        client.EditFilmCountry(new CountriesName(countriesNameId)); // было country 2 стало 3, передать аргументы
+
+                        country1.getValue().equals("");
+                        countriesNameId.setCountryId(searchIdCountry(country1.getValue()));
+                        countriesNameId.setFilmId(filmId);
+                        client.EditFilmCountry(new CountriesName(countriesNameId));
+
+                        country2.getValue().equals("");
+                        countriesNameId.setCountryId(searchIdCountry(country2.getValue()));
+                        countriesNameId.setFilmId(filmId);
+                        client.EditFilmCountry(new CountriesName(countriesNameId));
+
+                        country3.getValue().equals("");
+                        countriesNameId.setCountryId(searchIdCountry(country3.getValue()));
+                        countriesNameId.setFilmId(filmId);
+                        client.EditFilmCountry(new CountriesName(countriesNameId));
+
+                    } catch (NullPointerException e) { }
+
+                    try {
+                        genresNameId.setGenreId(searchIdGenre(genre.getValue()));
+                        genresNameId.setFilmId(filmId);
+                        client.EditFilmGenre(new GenresName(genresNameId));
+
+                        genre1.getValue().equals("");
+                        genresNameId.setGenreId(searchIdGenre(genre1.getValue()));
+                        genresNameId.setFilmId(filmId);
+                        client.EditFilmGenre(new GenresName(genresNameId));
+
+                        genre2.getValue().equals("");
+                        genresNameId.setGenreId(searchIdGenre(genre2.getValue()));
+                        genresNameId.setFilmId(filmId);
+                        client.EditFilmGenre(new GenresName(genresNameId));
+
+                        genre3.getValue().equals("");
+                        genresNameId.setGenreId(searchIdGenre(genre3.getValue()));
+                        genresNameId.setFilmId(filmId);
+                        client.EditFilmGenre(new GenresName(genresNameId));
+                    } catch (NullPointerException e) { }
+                    finally {
+                        notification.getSuccess(buttonSave, notification.HEAD_EDIT, notification.SUCCESS_EDIT);
+                        buttonSave.getScene().getWindow().hide();
+                    }
+
+                } catch (RemoteException e) {
+                    notification.getError(buttonSave, notification.HEAD_EDIT, notification.ERROR_CONNECT);
+                } catch (SQLException e) {
+                    notification.getError(buttonSave, notification.HEAD_EDIT, notification.ERROR);
+                }
+            });
+        } catch (NullPointerException e) {
+            notification.getError(buttonSave, notification.HEAD_EDIT, notification.ERROR);
+        }
     }
 
 

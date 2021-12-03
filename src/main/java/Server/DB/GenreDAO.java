@@ -14,6 +14,7 @@ public interface GenreDAO {
     public void truncate();
     public List<Genre> view();
     public List<Genre> search(int searchId);
-    public void addTotal(GenresName genresName);
+    public void addTotal(GenresName genresName) throws SQLException;
+    public void updateTotal(GenresName genresName) throws SQLException;
     public List<GenresName> searchGenre(int searchId);
 }

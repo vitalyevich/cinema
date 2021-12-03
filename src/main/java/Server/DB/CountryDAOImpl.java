@@ -106,13 +106,45 @@ public class CountryDAOImpl implements CountryDAO {
     }
 
     @Override
-    public void addTotal(CountriesName countriesName) {
+    public void addTotal(CountriesName countriesName) throws SQLException {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction transaction = null;
 
         transaction = session.beginTransaction();
 
-        session.save(countriesName);
+        Query query = session.createQuery("FROM CountriesName WHERE id.filmId = :filmId AND id.countryId = :countryId");
+        query.setParameter("filmId", countriesName.getId().getFilmId());
+        query.setParameter("countryId", countriesName.getId().getCountryId());
+
+        if(query.list().isEmpty()){
+            session.save(countriesName);
+        }
+        else {
+            throw new SQLException();
+        }
+
+        transaction.commit();
+        session.close();
+    }
+
+    @Override
+    public void updateTotal(CountriesName countriesName) throws SQLException {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        transaction = session.beginTransaction();
+
+        // проверки + если не будет данных просто удалять
+/*        CountriesName countriesName1 = (CountriesName) session.get(CountriesName.class, countriesName.getId());
+        countriesName1.setId(countriesName.getId());
+        session.update(countriesName1);
+        transaction.commit();
+        session.close();*/
+
+        Query query = session.createNativeQuery("UPDATE countries_name SET film_id =:filmId, country_id =:countryId " +
+                        "WHERE film_id = 1 AND country_id = 3")
+                .setParameter("countryId", countriesName.getId().getCountryId())
+                .setParameter("filmId", countriesName.getId().getFilmId());
 
         transaction.commit();
         session.close();

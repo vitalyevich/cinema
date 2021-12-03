@@ -16,6 +16,8 @@ public interface CountryDAO {
     public List<Country> view();
     public List<Country> search(int searchId);
 
-    public void addTotal(CountriesName countriesName);
+    public void addTotal(CountriesName countriesName) throws SQLException;
+    public void updateTotal(CountriesName countriesName) throws SQLException;
+
     public List<CountriesName> searchCountry(int searchId);
 }

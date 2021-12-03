@@ -53,7 +53,7 @@ public interface BillingService extends Remote {
     public List<ProductType> getProductTypeList() throws RemoteException;
     public List<ProductType> findByProduct(ProductType productType) throws RemoteException;
 
-    public void AddNewFilm(Film film) throws RemoteException;
+    public void AddNewFilm(Film film) throws RemoteException, SQLException;
     public void EditFilm(Film film) throws  RemoteException;
     public void DeleteFilmById(int id) throws RemoteException;
     public void DeleteFilm(String name) throws RemoteException;
@@ -64,8 +64,10 @@ public interface BillingService extends Remote {
     public List<GenresName>  getFilmGenre(int searchId) throws RemoteException;
     public List<CountriesName>  getFilmCountry(int searchId) throws RemoteException;
 
-    public void AddNewFilmGenre(GenresName genresName) throws RemoteException;
-    public void AddNewFilmCountry(CountriesName countriesName) throws RemoteException;
+    public void AddNewFilmGenre(GenresName genresName) throws RemoteException, SQLException;
+    public void EditFilmGenre(GenresName genresName) throws RemoteException, SQLException;
+    public void EditFilmCountry(CountriesName countriesName) throws RemoteException, SQLException;
+    public void AddNewFilmCountry(CountriesName countriesName) throws RemoteException, SQLException;
 
     public void AddNewSeance(Seance seance) throws RemoteException, SQLException;
     public void EditSeance(Seance seance) throws  RemoteException;

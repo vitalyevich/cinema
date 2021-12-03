@@ -2,13 +2,12 @@ package Server.DB;
 
 import Server.Model.Film;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface FilmDAO {
 
-    public Film findById(int id);
-    public List<Film> findByFilm(String film);
-    public void save(Film film);
+    public void save(Film film) throws SQLException;
     public void update(Film film);
     public void deleteByName(String name);
     public void deleteById(int id);

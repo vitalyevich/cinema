@@ -191,7 +191,7 @@ public class BillingServiceImpl extends UnicastRemoteObject implements BillingSe
     }
 
     @Override
-    public void AddNewFilm(Film film) throws RemoteException {
+    public void AddNewFilm(Film film) throws RemoteException, SQLException {
         filmDAO.save(film);
     }
 
@@ -236,13 +236,23 @@ public class BillingServiceImpl extends UnicastRemoteObject implements BillingSe
     }
 
     @Override
-    public void AddNewFilmGenre(GenresName genresName) throws RemoteException {
+    public void AddNewFilmGenre(GenresName genresName) throws RemoteException, SQLException {
         genreDAO.addTotal(genresName);
     }
 
     @Override
-    public void AddNewFilmCountry(CountriesName countriesName) throws RemoteException {
+    public void AddNewFilmCountry(CountriesName countriesName) throws RemoteException, SQLException {
         countryDAO.addTotal(countriesName);
+    }
+
+    @Override
+    public void EditFilmGenre(GenresName genresName) throws RemoteException, SQLException {
+        genreDAO.updateTotal(genresName);
+    }
+
+    @Override
+    public void EditFilmCountry(CountriesName countriesName) throws RemoteException, SQLException {
+        countryDAO.updateTotal(countriesName);
     }
 
     @Override

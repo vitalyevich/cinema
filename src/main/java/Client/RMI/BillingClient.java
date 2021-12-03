@@ -199,7 +199,7 @@ public class BillingClient implements Client.RMI.BillingService {
     }
 
     @Override
-    public void AddNewFilm(Film film) throws RemoteException {
+    public void AddNewFilm(Film film) throws RemoteException, SQLException {
         bs.AddNewFilm(film);
     }
 
@@ -244,12 +244,22 @@ public class BillingClient implements Client.RMI.BillingService {
     }
 
     @Override
-    public void AddNewFilmGenre(GenresName genresName) throws RemoteException {
+    public void AddNewFilmGenre(GenresName genresName) throws RemoteException, SQLException {
         bs.AddNewFilmGenre(genresName);
     }
 
     @Override
-    public void AddNewFilmCountry(CountriesName countriesName) throws RemoteException {
+    public void EditFilmGenre(GenresName genresName) throws RemoteException, SQLException {
+        bs.EditFilmGenre(genresName);
+    }
+
+    @Override
+    public void EditFilmCountry(CountriesName countriesName) throws RemoteException, SQLException {
+        bs.EditFilmCountry(countriesName);
+    }
+
+    @Override
+    public void AddNewFilmCountry(CountriesName countriesName) throws RemoteException, SQLException {
         bs.AddNewFilmCountry(countriesName);
     }
 

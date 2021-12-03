@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Administration.OperationFilmController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Administration.OperationFilmController">
    <children>
       <AnchorPane layoutX="-68.0" layoutY="-12.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
          <children>
@@ -75,7 +75,7 @@
                   <JFXComboBox fx:id="genre3" focusColor="#070707" prefHeight="43.0" prefWidth="300.0" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
                </children>
             </VBox>
-            <VBox layoutX="37.0" layoutY="20.0" prefHeight="533.0" prefWidth="171.0" spacing="35.0">
+            <VBox layoutX="7.0" layoutY="20.0" prefHeight="533.0" prefWidth="219.0" spacing="35.0">
                <children>
                   <Label text="Название">
                      <font>
@@ -87,7 +87,7 @@
                         <Font name="Cambria Bold" size="22.0" />
                      </font>
                   </Label>
-                  <Label text="Длительность">
+                  <Label text="Длительность(мин)">
                      <font>
                         <Font name="Cambria Bold" size="22.0" />
                      </font>
@@ -112,56 +112,56 @@
                   </Label>
                </children>
             </VBox>
+            <VBox layoutX="236.0" layoutY="16.0" prefHeight="462.0" prefWidth="300.0" spacing="23.0">
+               <children>
+                  <JFXTextField fx:id="name" focusColor="BLACK" prefWidth="300.0" unFocusColor="BLACK">
+                     <font>
+                        <Font name="Cambria" size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="year" focusColor="BLACK" prefWidth="300.0" unFocusColor="BLACK">
+                     <font>
+                        <Font name="Cambria" size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="time" focusColor="BLACK" prefWidth="300.0" unFocusColor="BLACK">
+                     <font>
+                        <Font name="Cambria" size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextArea fx:id="description" focusColor="BLACK" prefHeight="121.0" prefWidth="300.0" unFocusColor="BLACK">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXTextArea>
+                  <JFXTextField fx:id="age" focusColor="BLACK" prefWidth="300.0" unFocusColor="BLACK">
+                     <font>
+                        <Font name="Cambria" size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="rating" focusColor="BLACK" prefWidth="300.0" unFocusColor="BLACK">
+                     <font>
+                        <Font name="Cambria" size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXTextField>
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
-      <VBox layoutX="238.0" layoutY="29.0" prefHeight="462.0" prefWidth="300.0" spacing="23.0">
-         <children>
-            <JFXTextField fx:id="name" focusColor="BLACK" prefWidth="300.0" unFocusColor="BLACK">
-               <font>
-                  <Font name="Cambria" size="19.0" />
-               </font>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </JFXTextField>
-            <JFXTextField fx:id="year" focusColor="BLACK" prefWidth="300.0" unFocusColor="BLACK">
-               <font>
-                  <Font name="Cambria" size="19.0" />
-               </font>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </JFXTextField>
-            <JFXTextField fx:id="time" focusColor="BLACK" prefWidth="300.0" unFocusColor="BLACK">
-               <font>
-                  <Font name="Cambria" size="19.0" />
-               </font>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </JFXTextField>
-            <JFXTextArea fx:id="description" focusColor="BLACK" prefHeight="121.0" prefWidth="300.0" unFocusColor="BLACK">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </JFXTextArea>
-            <JFXTextField fx:id="age" focusColor="BLACK" prefWidth="300.0" unFocusColor="BLACK">
-               <font>
-                  <Font name="Cambria" size="19.0" />
-               </font>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </JFXTextField>
-            <JFXTextField fx:id="rating" focusColor="BLACK" prefWidth="300.0" unFocusColor="BLACK">
-               <font>
-                  <Font name="Cambria" size="19.0" />
-               </font>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </JFXTextField>
-         </children>
-      </VBox>
    </children>
 </AnchorPane>

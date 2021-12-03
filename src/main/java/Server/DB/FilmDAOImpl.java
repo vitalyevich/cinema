@@ -5,28 +5,29 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FilmDAOImpl implements FilmDAO{
 
     @Override
-    public Film findById(int id) {
-        return null;
-    }
-
-    @Override
-    public List<Film> findByFilm(String film) {
-        return null;
-    }
-
-    @Override
-    public void save(Film film) {
+    public void save(Film film) throws SQLException {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction transaction = null;
 
         transaction = session.beginTransaction();
-        session.save(film);
+
+        Query query = session.createQuery("FROM Film WHERE filmName = :filmName");
+        query.setParameter("filmName", film.getFilmName());
+
+        if(query.list().isEmpty()){
+            session.save(film);
+        }
+        else {
+            throw new SQLException();
+        }
+
         transaction.commit();
         session.close();
     }
@@ -38,13 +39,11 @@ public class FilmDAOImpl implements FilmDAO{
 
         transaction = session.beginTransaction();
         Film film1 = (Film) session.get(Film.class, film.getId());
-/*        film1.setNameFilm(film.getNameFilm());
-        film1.setCountry(film.getCountry());
-        film1.setYear(film.getYear());
-        film1.setGenre(film.getGenre());
-        film1.setTime(film.getTime());
-        film1.setPrice(film.getPrice());
-        film1.setDescription(film.getDescription());*/
+        film1.setFilmName(film.getFilmName());
+        film1.setReleaseDate(film.getReleaseDate());
+        film1.setShowTime(film.getShowTime());
+        film1.setFilmDescription(film.getFilmDescription());
+        film1.setAgeNum(film.getAgeNum());
         film1.setRating(film.getRating());
         session.update(film1);
         transaction.commit();
