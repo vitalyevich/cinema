@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="298.0" prefWidth="296.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coursework.controllers.PayBuffetController">
+   <children>
+      <Label layoutX="56.0" layoutY="125.0" text="Итоговая стоимость">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="cash" layoutX="23.0" layoutY="51.0" onMouseClicked="#onClicked_Cash" style="-fx-border-color: black; -fx-background-color: #A7C7E7;" text="Наличными">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="card" layoutX="174.0" layoutY="51.0" onMouseClicked="#onClicked_Card" style="-fx-border-color: black;" text="Картой">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="pay" layoutX="101.0" layoutY="216.0" onMouseClicked="#onClicked_Pay" style="-fx-border-color: black;" text="Оплата">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="price" alignment="TOP_CENTER" layoutX="1.0" layoutY="149.0" text="50 руб" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0">
+         <font>
+            <Font name="Cambria Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

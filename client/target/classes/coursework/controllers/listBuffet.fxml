@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coursework.controllers.BuffetController">
+   <children>
+      <TabPane layoutY="77.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="700.0" styleClass="table-cell" stylesheets="@../../css/style.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="96.0">
+         <tabs>
+            <Tab text="Продукты">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="346.0" prefWidth="575.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" layoutX="210.0" layoutY="1.0" prefHeight="665.0" prefWidth="396.0" spacing="10.0" style="-fx-background-color: d3d3d3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="64.0" prefWidth="340.0">
+                                 <children>
+                                    <Label text="Буфет" textFill="#878787">
+                                       <font>
+                                          <Font name="Cambria Bold" size="40.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="&quot;Беларусь&quot;" textFill="#878787">
+                                       <font>
+                                          <Font name="Cambria" size="40.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_CENTER" prefHeight="485.0" prefWidth="396.0">
+                                 <children>
+                                    <JFXListView fx:id="list" onMouseClicked="#onClicked_List" prefHeight="485.0" prefWidth="350.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="64.0" prefWidth="396.0" spacing="10.0">
+                                 <children>
+                                    <JFXButton fx:id="reset" onMouseClicked="#onClicked_Reset" prefHeight="39.0" prefWidth="76.0" ripplerFill="WHITE" style="-fx-background-color: orange; -fx-background-radius: 30;" text="reset" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="20.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="buy" onMouseClicked="#onClicked_Buy" prefHeight="52.0" prefWidth="157.0" ripplerFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 30;" text="ОПЛАТИТЬ" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="20.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="plus" disable="true" onMouseClicked="#onClicked_Plus" prefHeight="39.0" prefWidth="22.0" ripplerFill="WHITE" style="-fx-background-color: green; -fx-background-radius: 30;" text="+" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="20.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="minus" disable="true" onMouseClicked="#onClicked_Minus" prefHeight="39.0" prefWidth="39.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-background-radius: 30;" text="-" textFill="WHITE">
+                                       <font>
+                                          <Font name="Cambria Bold" size="20.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="396.0" />
+                           </children>
+                        </VBox>
+                        <HBox layoutX="426.0" layoutY="15.0" prefHeight="702.0" prefWidth="864.0" AnchorPane.leftAnchor="426.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane fx:id="scroll" prefHeight="715.0" prefWidth="975.0" style="-fx-background-color: transparent;">
+                                 <content>
+                                    <GridPane fx:id="grid" prefHeight="0.0" prefWidth="50.0">
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Склад">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="346.0" prefWidth="575.0">
+                     <children>
+                        <TableView fx:id="tableProduct" layoutX="390.0" layoutY="40.0" prefHeight="625.0" prefWidth="690.0" styleClass="table-cell" stylesheets="@../../css/style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="490.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                          <columns>
+                            <TableColumn fx:id="numberColumn" maxWidth="1000.0" prefWidth="75.0" text="№" />
+                            <TableColumn fx:id="nameColumn" prefWidth="109.0" text="Наименование" />
+                              <TableColumn fx:id="categoryColumn" prefWidth="109.0" text="Категория" />
+                              <TableColumn fx:id="totalColumn" maxWidth="3000.0" prefWidth="109.0" text="Количество" />
+                              <TableColumn fx:id="priceColumn" maxWidth="2500.0" prefWidth="165.0" text="Цена за шт." />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <TitledPane animated="false" collapsible="false" layoutX="20.0" layoutY="145.0" prefHeight="394.0" prefWidth="456.0" styleClass="pane" stylesheets="@../../css/style.css" text="Управление" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="145.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="22.0" layoutY="30.0" prefHeight="200.0" prefWidth="205.0" spacing="20.0">
+                                       <children>
+                                          <JFXComboBox fx:id="number" focusColor="BLACK" onAction="#onAction_Number" prefWidth="205.0" promptText="№" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                          <JFXTextField fx:id="name" focusColor="BLACK" prefHeight="43.0" prefWidth="205.0" promptText="Наименование" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                          <JFXComboBox fx:id="category" focusColor="BLACK" prefWidth="205.0" promptText="Категория" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                          <JFXTextField fx:id="total" focusColor="BLACK" prefHeight="43.0" prefWidth="205.0" promptText="Количество" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                          <JFXTextField fx:id="price" focusColor="BLACK" prefHeight="43.0" prefWidth="205.0" promptText="Стоимость" styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="243.0" layoutY="96.0" prefHeight="164.0" prefWidth="204.0" spacing="20.0">
+                                       <children>
+                                          <JFXButton fx:id="addProduct" onMouseClicked="#onMouseClicked_Add" prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: black;" styleClass="button-view" stylesheets="@../../css/style.css" text="Добавить" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="editProduct" onMouseClicked="#onMouseClicked_Edit" prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: black;" styleClass="button-view" stylesheets="@../../css/style.css" text="Редактировать" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="delProduct" onMouseClicked="#onMouseClicked_Del" prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: black;" styleClass="button-view" stylesheets="@../../css/style.css" text="Удалить" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" layoutX="20.0" layoutY="20.0" prefHeight="108.0" prefWidth="455.0" styleClass="pane" stylesheets="@../../css/style.css" text="Фильтрация">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <JFXTextField fx:id="searchProduct" focusColor="BLACK" layoutX="22.0" layoutY="13.0" prefHeight="43.0" prefWidth="265.0" promptText="Поиск..." styleClass="combo-box" stylesheets="@../../css/style.css" unFocusColor="BLACK" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Типы продуктов">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableProductType" layoutX="500.0" layoutY="43.0" prefHeight="657.0" prefWidth="770.0" styleClass="table-cell" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                          <columns>
+                            <TableColumn fx:id="numColumn" maxWidth="500.0" prefWidth="75.0" text="№" />
+                            <TableColumn fx:id="nameTypeColumn" prefWidth="177.0" text="Наименование" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <TitledPane animated="false" collapsible="false" layoutX="24.0" layoutY="20.0" prefHeight="240.0" prefWidth="462.0" styleClass="pane" stylesheets="@../../css/style.css" text="Управление" AnchorPane.leftAnchor="20.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="250.0" layoutY="21.0" prefHeight="159.0" prefWidth="204.0" spacing="20.0">
+                                       <children>
+                                          <JFXButton fx:id="addType" onMouseClicked="#onClicked_AddType" prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: black;" styleClass="button-view" stylesheets="@../../css/style.css" text="Добавить" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="editType" onMouseClicked="#onClicked_EditType" prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: black;" styleClass="button-view" stylesheets="@../../css/style.css" text="Редактировать" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="delType" onMouseClicked="#onClicked_DelType" prefWidth="195.0" ripplerFill="WHITE" style="-fx-background-color: black;" styleClass="button-view" stylesheets="@../../css/style.css" text="Удалить" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="25.0" layoutY="31.0" prefHeight="139.0" prefWidth="205.0" spacing="20.0">
+                                       <children>
+                                          <JFXComboBox fx:id="numberTypeProduct" focusColor="BLACK" onAction="#onAction_NumberType" prefWidth="205.0" promptText="№" styleClass="combo-box" unFocusColor="BLACK" />
+                                          <JFXTextField fx:id="nameType" focusColor="BLACK" prefWidth="205.0" promptText="Наименование" styleClass="combo-box" unFocusColor="BLACK" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Операции">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableOrder" layoutX="22.0" layoutY="14.0" prefHeight="583.0" prefWidth="1250.0" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                          <columns>
+                            <TableColumn fx:id="numOrderColumn" maxWidth="2000.0" prefWidth="94.00003051757812" text="№ чека" />
+                              <TableColumn fx:id="dateColumn" prefWidth="153.99996948242188" text="Дата" />
+                              <TableColumn fx:id="paymentColumn" prefWidth="138.0" text="Оплата" />
+                              <TableColumn fx:id="moneyColumn" prefWidth="154.0" text="Стоимость" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <HBox layoutX="1023.0" layoutY="633.0" prefHeight="65.0" prefWidth="267.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label prefHeight="23.0" prefWidth="157.0" text="Выручка за день:" />
+                              <Label text="50" />
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Чеки">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableCheck" prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <columns>
+                              <TableColumn fx:id="numberOrderColumn" maxWidth="2000.0" prefWidth="77.99996948242188" text="№ заказа" />
+                              <TableColumn fx:id="staffColumn" prefWidth="284.0000305175781" text="Сотрудник" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <AnchorPane fx:id="anchor" layoutX="257.0" layoutY="-32.0" prefHeight="96.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>

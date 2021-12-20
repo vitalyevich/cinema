@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coursework.controllers.ScreenController">
+   <children>
+      <VBox fx:id="boxIdLeft" alignment="TOP_CENTER" layoutX="218.0" layoutY="299.0" prefHeight="534.0" prefWidth="50.0" spacing="37.0" />
+      <VBox fx:id="boxSeat" layoutX="268.0" layoutY="287.0" prefHeight="534.0" prefWidth="772.0" />
+      <ImageView fitHeight="60.0" fitWidth="772.0" layoutX="260.0" layoutY="193.0" AnchorPane.topAnchor="193.0">
+         <image>
+            <Image url="@../../img/screen.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label" layoutX="1134.0" layoutY="213.0">
+         <font>
+            <Font name="Panton Black Caps" size="16.0" />
+         </font>
+      </Label>
+      <VBox fx:id="boxIdRight" alignment="TOP_CENTER" layoutX="1040.0" layoutY="299.0" prefHeight="534.0" prefWidth="50.0" spacing="37.0" />
+      <AnchorPane layoutY="56.0" prefHeight="67.0" prefWidth="1300.0" style="-fx-background-color: e9e9e9;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="56.0">
+         <children>
+            <Label layoutX="50.0" layoutY="22.0" text="22:50" textFill="#b50000">
+               <font>
+                  <Font name="Cambria Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="417.0" layoutY="22.0" text="Сегодня, 30 сентября в 23:35 (идёт 9 мин.)" textFill="#b50000">
+               <font>
+                  <Font name="Cambria Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="1076.0" layoutY="22.0" text="23:50">
+               <font>
+                  <Font name="Cambria Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="1216.0" layoutY="22.0" text="00:40">
+               <font>
+                  <Font name="Cambria Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="123.0" prefHeight="60.0" prefWidth="1300.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="123.0">
+         <effect>
+            <DropShadow color="#e9e9e9" radius="4.75" spread="0.63" width="0.0" />
+         </effect>
+         <children>
+            <AnchorPane layoutX="321.0" layoutY="20.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #013f78; -fx-background-radius: 5;" />
+            <Label layoutX="352.0" layoutY="19.0" text="5 руб">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="424.0" layoutY="20.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: red; -fx-background-radius: 5;" />
+            <Label layoutX="455.0" layoutY="19.0" text="7 руб">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="532.0" layoutY="20.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: green; -fx-background-radius: 5;" />
+            <Label layoutX="563.0" layoutY="19.0" text="10 руб">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="653.0" layoutY="20.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: gray; -fx-background-radius: 10;" />
+            <Label layoutX="683.0" layoutY="19.0" text="Выбрано">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="781.0" layoutY="20.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: black; -fx-background-radius: 10;" />
+            <Label layoutX="811.0" layoutY="19.0" text="Занято">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="896.0" layoutY="20.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: orange; -fx-background-radius: 10;" />
+            <Label layoutX="926.0" layoutY="19.0" text="Бронь">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="4.0" layoutY="-7.0" prefHeight="60.0" prefWidth="1300.0" style="-fx-background-color: #292929;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="48.0" layoutY="6.0" text="Ничья, 16+, 2D" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="48.0" layoutY="28.0" text="23:35-01:25, Зал 1 VIP" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="1078.0" layoutY="7.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="1160.0" layoutY="7.0" text="66" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="1248.0" layoutY="7.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="1049.0" layoutY="28.0" text="продано" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="1132.0" layoutY="27.0" text="доступно" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="1228.0" layoutY="27.0" text="бронь" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
+            <FontAwesomeIcon fill="WHITE" glyphName="MAIL_REPLY" layoutX="14.0" layoutY="35.0" size="20" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="4.0" layoutY="833.0" prefHeight="67.0" prefWidth="1300.0" style="-fx-background-color: e9e9e9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="198.0" layoutY="-16.0" prefHeight="100.0" prefWidth="200.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="buttonScreen" onMouseClicked="#onClicked_Screen" prefHeight="50.0" prefWidth="220.0" style="-fx-border-color: #292929; -fx-border-radius: 5;" text="Экран выключен" textFill="RED">
+                     <font>
+                        <Font name="Cambria Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="pay" disable="true" onMouseClicked="#OnClicked_Pay" prefHeight="50.0" prefWidth="144.0" style="-fx-border-color: #292929; -fx-border-radius: 5;" text="Оплатить">
+                     <font>
+                        <Font name="Cambria Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="seance" onMouseClicked="#onClicked_Seance" prefHeight="50.0" prefWidth="144.0" style="-fx-border-color: #292929; -fx-border-radius: 5;" text="Сеансы">
+                     <font>
+                        <Font name="Cambria Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="glasses" onMouseClicked="#onClicked_Glasses" prefHeight="50.0" prefWidth="169.0" style="-fx-border-color: #292929; -fx-border-radius: 5;" text="Выдать очки">
+                     <font>
+                        <Font name="Cambria Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="control" disable="true" onMouseClicked="#OnClicked_Control" prefHeight="50.0" prefWidth="157.0" style="-fx-border-color: #292929; -fx-border-radius: 5;" text="Управление">
+                     <font>
+                        <Font name="Cambria Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

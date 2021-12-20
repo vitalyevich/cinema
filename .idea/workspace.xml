@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a1fff3b4-9bda-4dba-b364-59d559dd49fa" name="Changes" comment="add classes">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/77ba0f46-0771-424d-a34b-d1fb208641be.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/77ba0f46-0771-424d-a34b-d1fb208641be/storage_v2/_src_/database/cinema.8fLqrg/schema/INFORMATION_SCHEMA.NBgcMw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/77ba0f46-0771-424d-a34b-d1fb208641be/storage_v2/_src_/database/cinema.8fLqrg/schema/dbo.sYMBAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/77ba0f46-0771-424d-a34b-d1fb208641be/storage_v2/_src_/database/cinema.8fLqrg/schema/dbo.sYMBAA.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/77ba0f46-0771-424d-a34b-d1fb208641be/storage_v2/_src_/database/cinema.8fLqrg/schema/sys.zb4BAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__com_jfoenix_jfoenix_9_0_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__de_jensd_fontawesomefx_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__de_saxsys_jfx_testrunner_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__de_svenkubiak_jBCrypt_0_4_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__io_datafx_core_8_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__io_datafx_datafx_8_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__io_datafx_flow_8_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__junit_junit_4_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_kordamp_ikonli_ikonli_core_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_kordamp_ikonli_ikonli_fontawesome5_pack_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_kordamp_ikonli_ikonli_javafx_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_openjfx_javafx_base_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_openjfx_javafx_base_win_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_openjfx_javafx_controls_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_openjfx_javafx_fxml_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/javafx_sdk_17_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/libraries/mssql_jdbc_9_4_0_jre11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.jpb/jpb-settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/lib/stax-ex-1.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/lib/txw2-2.3.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/Authorization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/AddScreenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/AddStaffController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/AdministrationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/AuthorizationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/BuffetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/ControlScreenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/CoverController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/EditStaffController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/FilmController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/ItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/OperationFilmController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/PayBuffetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/ScreenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/SeanceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/SeatController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/StaffController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/StatsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/controllers/TicketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/interfaces/MyListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/interfaces/Notifiable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/interfaces/Openable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/interfaces/Verifiable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Access.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/AccessId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Check.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/CheckId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/CountriesName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/CountriesNameId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Film.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Genre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/GenresName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/GenresNameId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Hall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/OrderProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/OrderProductId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/OrderTicket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/OrderTicketId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/ProductType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Seance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Seat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/SeatId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Staff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/Ticket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/TicketsPrice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/TicketsPriceId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/models/WorkingHour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/operations/MyTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/operations/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/operations/Open.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/operations/OperationWithUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/operations/OperationWithUserImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/operations/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/rmi/BillingClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/coursework/rmi/BillingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/authorization.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/addFilm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/addScreen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/addSeance.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/addSeat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/addStaff.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/administration.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/controlScreen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/cover.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/delFilm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/delSeance.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/delSeat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/editFilm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/editSeance.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/editSeat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/editStaff.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/item.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/listBuffet.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/listFilm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/listStats.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/listTicket.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/payBuffet.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/payTicket.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/screen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/settings.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/coursework/controllers/staffControl.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/img/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/test/java/coursework/controllers/AddStaffControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/test/java/coursework/controllers/AuthorizationControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/test/java/coursework/models/GenreTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/Authorization.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/authorization.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/AddScreenController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/AddStaffController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/AdministrationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/AuthorizationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/BuffetController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/ControlScreenController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/CoverController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/EditStaffController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/FilmController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/ItemController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/OperationFilmController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/PayBuffetController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/ScreenController$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/ScreenController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/SeanceController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/SeatController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/StaffController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/StatsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/TicketController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/addFilm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/addScreen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/addSeance.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/addSeat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/addStaff.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/administration.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/controlScreen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/cover.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/delFilm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/delSeance.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/delSeat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/editFilm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/editSeance.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/editSeat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/editStaff.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/item.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/listBuffet.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/listFilm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/listStats.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/listTicket.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/payBuffet.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/payTicket.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/screen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/settings.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/controllers/staffControl.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/interfaces/MyListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/interfaces/Notifiable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/interfaces/Openable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/interfaces/Verifiable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Access.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/AccessId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Category.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Check.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/CheckId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/CountriesName.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/CountriesNameId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Country.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Department.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Film.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Genre.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/GenresName.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/GenresNameId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Hall.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Order.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/OrderProduct.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/OrderProductId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/OrderTicket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/OrderTicketId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Payment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/ProductType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Seance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Seat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/SeatId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Staff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/Ticket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/TicketsPrice.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/TicketsPriceId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/models/WorkingHour.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/operations/MyTimer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/operations/Notification.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/operations/Open.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/operations/OperationWithUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/operations/OperationWithUserImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/operations/Session.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/rmi/BillingClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/coursework/rmi/BillingService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/img/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/test-classes/coursework/controllers/AddStaffControllerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/test-classes/coursework/controllers/AuthorizationControllerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/test-classes/coursework/models/GenreTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Hibernate_5_4_11_5_4_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__com_jfoenix_jfoenix_9_0_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__de_jensd_fontawesomefx_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__de_saxsys_jfx_testrunner_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__de_svenkubiak_jBCrypt_0_4_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__io_datafx_core_8_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__io_datafx_datafx_8_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__io_datafx_flow_8_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_kordamp_ikonli_ikonli_core_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_kordamp_ikonli_ikonli_fontawesome5_pack_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_kordamp_ikonli_ikonli_javafx_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_openjfx_javafx_base_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_openjfx_javafx_base_win_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_openjfx_javafx_controls_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_openjfx_javafx_fxml_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_ea_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/fontawesomefx_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/javafx_sdk_17_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/jfoenix_0_0_0_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/libraries/mssql_jdbc_9_4_0_jre11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.jpb/jpb-settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/lib/stax-ex-1.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/lib/txw2-2.3.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/AccessDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/BuffetDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/CategoryDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/CountryDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/DepartmentDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/FilmDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/GenreDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/HallDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/OrderDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/SeanceDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/SeatDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/StaffDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/interfaces/TicketDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Access.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/AccessId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Check.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/CheckId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/CountriesName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/CountriesNameId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Film.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Genre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/GenresName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/GenresNameId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Hall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/OrderProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/OrderProductId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/OrderTicket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/OrderTicketId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/ProductType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Seance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Seat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/SeatId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Staff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/Ticket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/TicketsPrice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/TicketsPriceId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/models/WorkingHour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/AccessDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/BuffetDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/CategoryDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/CountryDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/DepartmentDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/FilmDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/GenreDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/HallDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/HibernateSessionFactoryUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/OrderDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/SeanceDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/SeatDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/StaffDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/operations/TicketDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/rmi/BillingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/coursework/rmi/BillingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/AccessDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/BuffetDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/CategoryDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/CountryDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/DepartmentDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/FilmDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/GenreDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/HallDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/OrderDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/SeanceDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/SeatDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/StaffDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/interfaces/TicketDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Access.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/AccessId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Category.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Check.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/CheckId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/CountriesName.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/CountriesNameId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Country.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Department.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Film.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Genre.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/GenresName.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/GenresNameId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Hall.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Order.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/OrderProduct.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/OrderProductId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/OrderTicket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/OrderTicketId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Payment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/ProductType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Seance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Seat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/SeatId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Staff.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/Ticket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/TicketsPrice.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/TicketsPriceId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/models/WorkingHour.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/AccessDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/BuffetDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/CategoryDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/CountryDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/DepartmentDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/FilmDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/GenreDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/HallDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/HibernateSessionFactoryUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/OrderDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/SeanceDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/SeatDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/StaffDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/operations/TicketDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/rmi/BillingService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/coursework/rmi/BillingServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/target/classes/hibernate.cfg.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectId" id="22XshRzA2W96gmwZdo1LPACyMmm" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mongo&#10;sqlserver" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/sqljdbc_9.4/rus/mssql-jdbc-9.4.0.jre8.jar" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager" selected="Application.client">
+    <configuration name="client" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="coursework.Authorization" />
+      <module name="coursework" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="server" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="coursework.rmi.BillingServiceImpl" />
+      <module name="coursework (1)" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.client" />
+      <item itemvalue="Application.server" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1fff3b4-9bda-4dba-b364-59d559dd49fa" name="Changes" comment="" />
+      <created>1639995385479</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639995385479</updated>
+      <workItem from="1639995386866" duration="2122000" />
+    </task>
+    <task id="LOCAL-00001" summary="fix">
+      <created>1639996282861</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639996282861</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add script db">
+      <created>1639996912193</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1639996912193</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="add script db" />
+    <MESSAGE value="add classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="add classes" />
+  </component>
+</project>
