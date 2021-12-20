@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="cinema@localhost" uuid="db23b5e9-1eb8-4741-ba7e-28967d115b75">
+    <data-source source="LOCAL" name="cinema@localhost" uuid="77ba0f46-0771-424d-a34b-d1fb208641be">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
-      <configured-by-url>true</configured-by-url>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
       <jdbc-url>jdbc:sqlserver://localhost:1433;database=cinema</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
