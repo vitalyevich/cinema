@@ -9,3 +9,9 @@ Automated cinema work on Java using JavaFX.
 
 [![cinema](images/image2.png)](../../../cinema)
 
+
+[![cinema](images/image3.png)](../../../cinema)
+
+
+[![cinema](images/image4.png)](../../../cinema)
+
